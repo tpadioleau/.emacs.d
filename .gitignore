@@ -9,3 +9,25 @@
 
 # Undo-tree save-files
 *.~undo-tree
+
+# Elpa folder
+elpa
+
+# Local configuration file
+garbage.el*
+
+# Helm
+helm*
+
+# Projectile files
+projectile-bookmarks.eld
+
+# Recentf file
+recentf
+
+# Lsp sessions
+.lsp-session*
+
+# Places
+/places
+
