@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: fora
+# key: fora
+# --
+for (auto ${1:e} : ${2:E})
+{
+    $0
+}

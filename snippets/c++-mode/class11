@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: class11
+# key: cls11
+# contributor: Thomas PADIOLEAU
+# desc: Snippet for C++11 classes
+# --
+class ${1:Class}
+{
+public:
+    ${2:$1() = default;}
+    ${3:$1(const $1& x) = default;}
+    ${4:$1($1&& x) = default;}
+    ${5:~$1() = default;}
+    ${6:$1& operator=(const $1& x) = default;}
+    ${7:$1& operator=($1&& x) = default;}
+};
