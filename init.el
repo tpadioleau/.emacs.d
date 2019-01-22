@@ -60,8 +60,10 @@ There are two things you can do about this warning:
 ;; Enables the package "use-package".
 (eval-when-compile
   (require 'use-package))
-(require 'bind-key)
-(require 'diminish)
+(use-package bind-key
+  :ensure t)
+(use-package diminish
+  :ensure t)
 
 ;; Custom packages in .emacs.d/init
 (push (expand-file-name "init" user-emacs-directory) load-path)
