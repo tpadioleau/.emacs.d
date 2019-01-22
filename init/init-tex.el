@@ -55,5 +55,8 @@
                  (push '(company-auctex-environments
                          company-auctex-labels) company-backends)))
 
+(use-package academic-phrases
+  :ensure t)
+
 (provide 'init-tex)
 ;;; init-tex ends here
