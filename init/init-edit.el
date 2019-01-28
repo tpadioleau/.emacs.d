@@ -71,6 +71,7 @@
          ("C-e" . mwim-end-of-code-or-line)))
 
 (global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "<f5>") 'revert-buffer)
 
 (use-package saveplace
   :ensure nil
