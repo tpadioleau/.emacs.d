@@ -35,8 +35,7 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook ((c-mode c++-mode objc-mode python-mode) . lsp)
-  :config (use-package lsp-clients))
+  :hook ((c-mode c++-mode objc-mode python-mode sh-mode) . lsp-deferred))
 
 (use-package lsp-ui
   :ensure t
@@ -46,6 +45,10 @@
                 lsp-ui-imenu-enable t
                 lsp-ui-sideline-enable nil
                 lsp-ui-sideline-ignore-duplicate nil))
+
+(use-package helm-lsp
+  :ensure t
+  :commands helm-lsp-workspace-symbol)
 
 (use-package flymake-diagnostic-at-point
   :ensure t
