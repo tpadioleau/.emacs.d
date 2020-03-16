@@ -31,6 +31,8 @@
 (use-package cc-mode
   :ensure t
   :mode ("\\.[hH]\\'" . c++-mode)
+  :mode ("\\.cu\\'" . c++-mode)
+  :mode ("\\.cuh\\'" . c++-mode)
   :config (progn (setq tab-always-indent 'complete)
                  (setq c-default-style "bsd")
                  (setq c-basic-offset 4)
