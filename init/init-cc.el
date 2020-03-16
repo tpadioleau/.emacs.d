@@ -36,7 +36,9 @@
   :config (progn (setq tab-always-indent 'complete)
                  (setq c-default-style "bsd")
                  (setq c-basic-offset 4)
-                 (setq c-offsets-alist '((innamespace . 0)))))
+                 (setq c-offsets-alist '((innamespace . 0)))
+                 ;; to avoid backslashes in single quotes with smartparens
+                 (setq sp-escape-quotes-after-insert nil)))
 
 (use-package ccls
   :ensure t
