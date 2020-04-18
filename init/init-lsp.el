@@ -55,5 +55,8 @@
   :after flymake
   :hook (flymake-mode . flymake-diagnostic-at-point-mode))
 
+(use-package format-all
+  :ensure t)
+
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
