@@ -48,10 +48,6 @@
   :ensure t
   :hook (c++-mode . modern-c++-font-lock-mode))
 
-(use-package clang-format
-  :ensure t
-  :defer t)
-
 ;; https://www.emacswiki.org/emacs/SrSpeedbar
 (use-package sr-speedbar
   :ensure t
