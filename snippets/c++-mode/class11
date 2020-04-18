@@ -8,9 +8,9 @@ class ${1:Class}
 {
 public:
     ${2:$1() = default;}
-    ${3:$1(const $1& x) = default;}
-    ${4:$1($1&& x) = default;}
+    ${3:$1( const $1& x ) = default;}
+    ${4:$1( $1&& x ) = default;}
     ${5:virtual }${6:~$1() = default;}
-    ${7:$1& operator=(const $1& x) = default;}
-    ${8:$1& operator=($1&& x) = default;}
+    ${7:$1& operator=( const $1& x ) = default;}
+    ${8:$1& operator=( $1&& x ) = default;}
 };
