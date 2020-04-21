@@ -56,7 +56,8 @@
                          company-auctex-labels) company-backends)))
 
 (use-package academic-phrases
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'init-tex)
 ;;; init-tex ends here
