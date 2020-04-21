@@ -30,13 +30,7 @@
 
 (use-package company
   :ensure t
-  :hook ((prog-mode TeX-mode) . company-mode)
-  :bind (("C-<tab>" . company-complete))
-  ;; to solve conflicts between yasnippet and company
-  :config (progn (setq company-idle-delay 0.75)
-		 (defvar my-company-point)
-		 (advice-add 'company-complete :before (lambda () (setq my-company-point (point))))
-		 (advice-add 'company-complete :after (lambda () (when (equal my-company-point (point)) (when (fboundp 'yas-expand) (yas-expand)))))))
+  :hook ((prog-mode TeX-mode) . company-mode))
 
 (when (>= emacs-major-version 26)
   (use-package company-box

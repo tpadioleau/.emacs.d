@@ -55,7 +55,7 @@
 (use-package helm-company
   :ensure t
   :after (:all company helm)
-  :bind ("C-:" . helm-company))
+  :bind ("C-<tab>" . helm-company))
 
 (provide 'init-helm)
 ;;; init-helm.el ends here
