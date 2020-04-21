@@ -42,6 +42,8 @@
   :after lsp-mode
   :hook (lsp-mode . lsp-ui-mode)
   :config (setq lsp-ui-doc-enable t
+                lsp-ui-doc-position 'top
+                lsp-ui-doc-alignment 'window
                 lsp-ui-imenu-enable t
                 lsp-ui-sideline-enable nil
                 lsp-ui-sideline-ignore-duplicate nil))
