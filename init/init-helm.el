@@ -49,6 +49,7 @@
 
 (use-package helm-descbinds
   :ensure t
+  :after helm
   :bind ("C-h b" . helm-descbinds))
 
 (use-package helm-company
