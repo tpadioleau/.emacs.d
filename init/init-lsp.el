@@ -33,6 +33,15 @@
   :after (:all company lsp-mode)
   :config (push 'company-lsp company-backends))
 
+(use-package flycheck-clang-analyzer
+  :ensure t
+  :after flycheck
+  :hook (flycheck-mode . flycheck-clang-analyzer-setup))
+
+(use-package flycheck-clang-tidy
+  :ensure t
+  :hook (flycheck-mode . flycheck-clang-tidy-setup))
+
 (use-package lsp-mode
   :ensure t
   :hook ((c-mode c++-mode objc-mode python-mode sh-mode) . lsp-deferred))
