@@ -39,23 +39,27 @@
 	 ("M-y" . helm-show-kill-ring)
 	 ("C-x C-f" . helm-find-files)
          ("C-x C-b" . helm-buffers-list)
-         ("C-h C-b" . helm-apropos))
-  :config (use-package helm-config))
+         ("C-h C-b" . helm-apropos)))
 
+(use-package helm-config
+  :ensure helm
+  :after helm)
+
+;; Wait until a mode needs xref to load helm-xref
 (use-package helm-xref
   :ensure t
-  :after (:all helm xref)
+  :after xref
   :config (setq xref-show-xrefs-function 'helm-xref-show-xrefs))
 
 (use-package helm-descbinds
   :ensure t
-  :after helm
-  :bind ("C-h b" . helm-descbinds))
+  :hook (after-init . helm-descbinds-mode))
 
+;; Wait until a mode needs company to define key-binding
 (use-package helm-company
   :ensure t
-  :after (:all company helm)
-  :bind ("C-<tab>" . helm-company))
+  :after company
+  :bind (:map company-mode-map ("C-<tab>" . helm-company)))
 
 (provide 'init-helm)
 ;;; init-helm.el ends here
