@@ -30,7 +30,8 @@
 
 (use-package company
   :ensure t
-  :hook ((prog-mode TeX-mode) . company-mode))
+  :hook ((prog-mode TeX-mode) . company-mode)
+  :config (setq company-idle-delay 0.25))
 
 (when (>= emacs-major-version 26)
   (use-package company-box
