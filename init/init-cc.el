@@ -31,14 +31,11 @@
 (use-package cc-mode
   :ensure t
   :mode ("\\.[hH]\\'" . c++-mode)
-  :mode ("\\.cu\\'" . c++-mode)
-  :mode ("\\.cuh\\'" . c++-mode)
-  :config (progn (setq tab-always-indent 'complete)
+  :mode ("\\.\\(cu\\|cuh\\)\\'" . c++-mode)
+  :config (progn (setq c-tab-always-indent 'complete)
                  (setq c-default-style "bsd")
                  (setq c-basic-offset 4)
-                 (setq c-offsets-alist '((innamespace . 0)))
-                 ;; to avoid backslashes in single quotes with smartparens
-                 (setq sp-escape-quotes-after-insert nil)))
+                 (setq c-offsets-alist '((innamespace . 0)))))
 
 (use-package ccls
   :ensure t
@@ -51,8 +48,7 @@
 ;; https://www.emacswiki.org/emacs/SrSpeedbar
 (use-package sr-speedbar
   :ensure t
-  :defer t
-  :after helm) ; to avoid a conflict with helm package
+  :defer t)
 
 (provide 'init-cc)
 ;;; init-cc.el ends here
