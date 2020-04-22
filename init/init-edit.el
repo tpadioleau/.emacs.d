@@ -55,10 +55,14 @@
          (prog-mode . flyspell-prog-mode))
   :init (setq ispell-program-name "aspell"))
 
+(use-package flyspell-correct
+  :ensure t
+  :after flyspell
+  :bind (:map flyspell-mode-map ("C-;" . flyspell-correct-wrapper)))
+
 (use-package flyspell-correct-helm
   :ensure t
-  :after (:all flyspell helm)
-  :bind ([down-mouse-3] . flyspell-correct-word-generic))
+  :after flyspell-correct)
 
 (use-package hungry-delete
   :ensure t
