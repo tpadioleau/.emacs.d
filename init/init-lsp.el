@@ -28,6 +28,7 @@
 
 ;;; Code:
 
+;; Wait until a mode needs both company and lsp to load company-lsp
 (use-package company-lsp
   :ensure t
   :after (:all company lsp-mode)
@@ -35,7 +36,6 @@
 
 (use-package flycheck-clang-analyzer
   :ensure t
-  :after flycheck
   :hook (flycheck-mode . flycheck-clang-analyzer-setup))
 
 (use-package flycheck-clang-tidy
@@ -48,7 +48,6 @@
 
 (use-package lsp-ui
   :ensure t
-  :after lsp-mode
   :hook (lsp-mode . lsp-ui-mode)
   :config (setq lsp-ui-doc-enable t
                 lsp-ui-doc-position 'top
@@ -63,11 +62,11 @@
 
 (use-package flymake-diagnostic-at-point
   :ensure t
-  :after flymake
   :hook (flymake-mode . flymake-diagnostic-at-point-mode))
 
 (use-package format-all
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
