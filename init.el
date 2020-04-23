@@ -78,6 +78,7 @@ There are two things you can do about this warning:
 (require 'init-helm)
 (require 'init-lsp)
 (require 'init-md)
+(require 'init-pdf)
 (require 'init-python)
 (require 'init-tex)
 (require 'init-utils)

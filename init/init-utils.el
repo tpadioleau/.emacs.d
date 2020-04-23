@@ -40,13 +40,5 @@
   :ensure t
   :commands esup)
 
-(use-package pdf-tools
-  :ensure t
-  :mode ("\\.[pP][dD][fF]\\'" . pdf-view-mode)
-  :hook (pdf-view-mode . (lambda ()
-                           (display-line-numbers-mode -1)
-                           (projectile-mode -1)))
-  :config (pdf-tools-install))
-
 (provide 'init-utils)
 ;;; init-utils.el ends here
