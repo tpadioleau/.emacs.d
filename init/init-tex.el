@@ -45,13 +45,6 @@
   :hook (TeX-mode . reftex-mode)
   :config (setq reftex-cite-prompt-optional-args t))
 
-(use-package company-auctex
-  :ensure t
-  :after (:all auctex company yasnippet)
-  :config (progn (company-auctex-init)
-                 (push '(company-auctex-environments
-                         company-auctex-labels) company-backends)))
-
 (use-package academic-phrases
   :ensure t
   :defer t)
