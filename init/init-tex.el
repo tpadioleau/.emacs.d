@@ -38,13 +38,12 @@
             (setq TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view)))
             (setq TeX-source-correlate-mode t)
             (add-hook 'TeX-after-compilation-finished-functions 'TeX-revert-document-buffer)
-            (add-hook 'LaTeX-mode-hook #'turn-on-reftex)
             (setq reftex-plug-into-AUCTeX t)))
 
 (use-package reftex
   :ensure t
-  :defer t
-  :config (setq reftex-cite-prompt-optional-args t))
+  :config (setq reftex-cite-prompt-optional-args t)
+  :hook (TeX-mode . reftex-mode))
 
 (use-package company-auctex
   :ensure t
