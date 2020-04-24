@@ -37,8 +37,6 @@
             (setq TeX-view-program-selection '((output-pdf "PDF Tools")))
             (setq TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view)))
             (setq TeX-source-correlate-mode t)
-            (setq TeX-source-correlate-start-server t)
-            (setq TeX-source-correlate-method (quote synctex))
             (add-hook 'TeX-after-compilation-finished-functions 'TeX-revert-document-buffer)
             (add-hook 'LaTeX-mode-hook #'turn-on-reftex)
             (setq reftex-plug-into-AUCTeX t)))
