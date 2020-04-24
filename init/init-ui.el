@@ -40,11 +40,16 @@
 (setq frame-resize-pixelwise t)
 (toggle-frame-maximized)
 
+(use-package simple
+  :ensure nil
+  :hook (after-init . column-number-mode)
+  :hook (after-init . line-number-mode)
+  :hook (after-init . size-indication-mode))
+
 (when (>= emacs-major-version 26)
   (use-package display-line-numbers
     :ensure nil
-    :hook ((prog-mode text-mode) . display-line-numbers-mode)
-    :hook (after-init . column-number-mode)))
+    :hook ((prog-mode text-mode) . display-line-numbers-mode)))
 
 (use-package doom-modeline
   :ensure t
