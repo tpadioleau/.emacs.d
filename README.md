@@ -8,6 +8,8 @@ cd ~ && git clone https://github.com/tpadioleau/.emacs.d.git
 ```
 Don't forget to remove any old .emacs.d configuration before cloning.
 
+Then call `all-the-icons-install-fonts` to install needed fonts.
+
 ## Usage
 
 ### Ccls

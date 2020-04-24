@@ -34,10 +34,15 @@
   :config (setq company-idle-delay 0.25))
 
 (when (>= emacs-major-version 26)
+  (use-package all-the-icons
+    :ensure t
+    :if (display-graphic-p))
+
   (use-package company-box
     :ensure t
     :if (display-graphic-p)
-    :hook (company-mode . company-box-mode)))
+    :hook (company-mode . company-box-mode)
+    :config (setq company-box-icons-alist 'company-box-icons-all-the-icons)))
 
 (provide 'init-company)
 ;;; init-company.el ends here
