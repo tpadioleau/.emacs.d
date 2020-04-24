@@ -49,7 +49,7 @@
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode)
-  :config (setq doom-modeline-icon nil))
+  :config (setq doom-modeline-icon t))
 
 (use-package doom-themes
   :ensure t
