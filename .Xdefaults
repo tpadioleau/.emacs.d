@@ -1,0 +1,9 @@
+! emacs ----------------------------------------------------------------------
+
+emacs.cursorType: bar
+emacs.fullscreen: maximized
+emacs.horizontalScrollBars: off
+emacs.menuBar: off
+emacs.scrollBar: off
+emacs.toolBar: off
+emacs.verticalScrollBars: off

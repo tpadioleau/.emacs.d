@@ -29,16 +29,16 @@
 
 ;;; Code:
 
-(menu-bar-mode -1)
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
-(when (fboundp 'horizontal-scroll-bar-mode)
-  (horizontal-scroll-bar-mode -1))
 (setq inhibit-startup-screen t)
+(setq frame-inhibit-implied-resize t)
 (setq frame-resize-pixelwise t)
-(toggle-frame-maximized)
+
+(push '(cursor-type . bar) default-frame-alist)
+(push '(fullscreen . maximized) default-frame-alist)
+(push '(horizontal-scroll-bars . nil) default-frame-alist)
+(push '(menu-bar-lines . 0) default-frame-alist)
+(push '(tool-bar-lines . 0) default-frame-alist)
+(push '(vertical-scroll-bars . nil) default-frame-alist)
 
 (use-package simple
   :ensure nil
