@@ -46,7 +46,7 @@
 
 (use-package rainbow-mode
   :ensure t
-  :hook ((emacs-list-mode web-mode css-mode) . rainbow-mode))
+  :hook ((emacs-lisp-mode web-mode css-mode) . rainbow-mode))
 
 (use-package rainbow-delimiters
   :ensure t
