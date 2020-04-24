@@ -37,13 +37,13 @@
             (setq TeX-view-program-selection '((output-pdf "PDF Tools")))
             (setq TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view)))
             (setq TeX-source-correlate-mode t)
-            (add-hook 'TeX-after-compilation-finished-functions 'TeX-revert-document-buffer)
-            (setq reftex-plug-into-AUCTeX t)))
+            (add-hook 'TeX-after-compilation-finished-functions 'TeX-revert-document-buffer)))
 
 (use-package reftex
   :ensure t
   :hook (TeX-mode . reftex-mode)
-  :config (setq reftex-cite-prompt-optional-args t))
+  :config (progn (setq reftex-cite-prompt-optional-args t)
+                 (setq reftex-plug-into-AUCTeX t)))
 
 (use-package academic-phrases
   :ensure t
