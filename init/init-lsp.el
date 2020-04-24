@@ -44,7 +44,7 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook ((c-mode c++-mode objc-mode python-mode sh-mode) . lsp-deferred))
+  :hook ((c-mode c++-mode objc-mode TeX-mode python-mode sh-mode) . lsp-deferred))
 
 (use-package lsp-ui
   :ensure t
