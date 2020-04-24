@@ -61,5 +61,9 @@
   :after company
   :bind (:map company-mode-map ("C-<tab>" . helm-company)))
 
+(use-package helm-lsp
+  :ensure t
+  :commands helm-lsp-workspace-symbol)
+
 (provide 'init-helm)
 ;;; init-helm.el ends here

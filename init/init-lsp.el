@@ -56,10 +56,6 @@
                 lsp-ui-sideline-enable nil
                 lsp-ui-sideline-ignore-duplicate nil))
 
-(use-package helm-lsp
-  :ensure t
-  :commands helm-lsp-workspace-symbol)
-
 (use-package flymake-diagnostic-at-point
   :ensure t
   :hook (flymake-mode . flymake-diagnostic-at-point-mode))
