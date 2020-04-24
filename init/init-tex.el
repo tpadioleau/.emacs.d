@@ -42,8 +42,8 @@
 
 (use-package reftex
   :ensure t
-  :config (setq reftex-cite-prompt-optional-args t)
-  :hook (TeX-mode . reftex-mode))
+  :hook (TeX-mode . reftex-mode)
+  :config (setq reftex-cite-prompt-optional-args t))
 
 (use-package company-auctex
   :ensure t
