@@ -43,7 +43,7 @@
 (when (>= emacs-major-version 26)
   (use-package display-line-numbers
     :ensure nil
-    :hook (after-init . global-display-line-numbers-mode)
+    :hook ((prog-mode text-mode) . display-line-numbers-mode)
     :hook (after-init . column-number-mode)))
 
 (use-package doom-modeline

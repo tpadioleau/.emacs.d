@@ -32,9 +32,6 @@
   :ensure t
   :if (display-graphic-p)
   :mode ("\\.[pP][dD][fF]\\'" . pdf-view-mode)
-  :hook (pdf-view-mode . (lambda ()
-                           (display-line-numbers-mode -1)
-                           (projectile-mode -1)))
   :config (pdf-tools-install))
 
 (provide 'init-pdf)
