@@ -41,7 +41,7 @@
 (set-language-environment 'UTF-8)
 (prefer-coding-system 'utf-8)
 (setenv "LC_CTYPE" "UTF-8")
-(load-library "iso-transl") ; to use accents
+(require 'iso-transl) ; to use accents
 
 (use-package clean-aindent-mode
   :ensure t
