@@ -59,7 +59,7 @@
 
 (use-package whitespace
   :ensure nil
-  :init (setq-default show-trailing-whitespace t))
+  :config (setq-default show-trailing-whitespace t))
 
 (provide 'init-highlight)
 ;;; init-highlight.el ends here
