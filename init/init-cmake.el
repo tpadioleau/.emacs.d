@@ -35,8 +35,10 @@
 (use-package cmake-font-lock
   :ensure t
   :defer t
-  :hook (cmake-mode . (lambda () (progn (cmake-font-lock-activate)
-                                        (rainbow-delimiters-mode)))))
+  :hook (cmake-mode . (lambda ()
+                        (rainbow-delimiters-mode-disable)
+                        (cmake-font-lock-activate)
+                        (font-lock-refresh-defaults))))
 
 (provide 'init-cmake)
 ;;; init-cmake.el ends here

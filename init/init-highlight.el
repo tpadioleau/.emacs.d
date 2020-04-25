@@ -54,8 +54,7 @@
 
 (use-package rainbow-delimiters
   :ensure t
-  :hook (prog-mode . (lambda () (unless (eq major-mode 'cmake-mode)
-                                  (rainbow-delimiters-mode)))))
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package whitespace
   :ensure nil
