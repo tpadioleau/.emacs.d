@@ -52,8 +52,7 @@
 (use-package flyspell
   :ensure t
   :hook ((text-mode . flyspell-mode)
-         (prog-mode . flyspell-prog-mode))
-  :init (setq ispell-program-name "aspell"))
+         (prog-mode . flyspell-prog-mode)))
 
 (use-package flyspell-correct
   :ensure t
@@ -92,8 +91,7 @@
   :hook (after-init . global-undo-tree-mode))
 
 (use-package uniquify
-  :ensure nil
-  :init (setq uniquify-buffer-name-style 'forward))
+  :ensure nil)
 
 (use-package windmove
   :ensure nil
