@@ -1,4 +1,4 @@
-;; init-highlight.el --- Initialize highlight configuration.
+;; init-dired.el --- Initialize dired configuration.
 
 ;; Copyright (C) 2019 Thomas Padioleau
 ;; Copyright (C) 2019 Vincent Zhang
@@ -25,37 +25,17 @@
 
 ;;; Commentary:
 
-;; Initialize highlight configuration.
+;; Initialize dired configuration.
 
 ;;; Code:
 
-(use-package highlight-doxygen
+(use-package all-the-icons-dired
   :ensure t
-  :hook (c-mode-common . highlight-doxygen-mode))
+  :hook (dired-mode . all-the-icons-dired-mode))
 
-(use-package hl-line
-  :ensure nil
-  :hook (after-init . global-hl-line-mode))
-
-(use-package paren
-  :ensure nil
-  :hook (after-init . show-paren-mode)
-  :config (progn
-            (setq show-paren-when-point-in-periphery t)
-            (setq show-paren-when-point-inside-paren t)
-            (set-face-attribute 'show-paren-match nil :background 'unspecified)))
-
-(use-package rainbow-mode
+(use-package diredfl
   :ensure t
-  :hook ((emacs-lisp-mode web-mode css-mode) . rainbow-mode))
+  :hook (dired-mode . diredfl-mode))
 
-(use-package rainbow-delimiters
-  :ensure t
-  :hook (prog-mode . rainbow-delimiters-mode))
-
-(use-package whitespace
-  :ensure nil
-  :config (setq-default show-trailing-whitespace t))
-
-(provide 'init-highlight)
-;;; init-highlight.el ends here
+(provide 'init-dired)
+;;; init-dired.el ends here

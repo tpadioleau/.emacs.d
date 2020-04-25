@@ -74,6 +74,7 @@ There are two things you can do about this warning:
 (require 'init-cmake)
 (require 'init-company)
 (require 'init-csv)
+(require 'init-dired)
 (require 'init-edit)
 (require 'init-helm)
 (require 'init-lsp)
