@@ -43,7 +43,7 @@
   :config (progn
             (setq show-paren-when-point-in-periphery t)
             (setq show-paren-when-point-inside-paren t)
-            (face-spec-set 'show-paren-match '((t :background unspecified)))))
+            (set-face-attribute 'show-paren-match nil :background 'unspecified)))
 
 (use-package diredfl
   :ensure t
