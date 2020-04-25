@@ -44,6 +44,10 @@
             (setq show-paren-when-point-in-periphery t)
             (setq show-paren-when-point-inside-paren t)))
 
+(use-package diredfl
+  :ensure t
+  :hook (dired-mode . diredfl-mode))
+
 (use-package rainbow-mode
   :ensure t
   :hook ((emacs-lisp-mode web-mode css-mode) . rainbow-mode))
