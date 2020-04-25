@@ -42,7 +42,8 @@
   :hook (after-init . show-paren-mode)
   :config (progn
             (setq show-paren-when-point-in-periphery t)
-            (setq show-paren-when-point-inside-paren t)))
+            (setq show-paren-when-point-inside-paren t)
+            (face-spec-set 'show-paren-match '((t :background unspecified)))))
 
 (use-package diredfl
   :ensure t
