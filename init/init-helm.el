@@ -45,11 +45,13 @@
   :ensure helm
   :after helm)
 
-;; Wait until a mode needs xref to load helm-xref
+;; Wait until xref is loaded to modify xref-show-xrefs-function and
+;; defer helm-ref package loading to the use of helm-xref-show-xrefs
 (use-package helm-xref
   :ensure t
   :after xref
-  :config (setq xref-show-xrefs-function 'helm-xref-show-xrefs))
+  :init (setq xref-show-xrefs-function 'helm-xref-show-xrefs)
+  :commands helm-xref-show-xrefs)
 
 (use-package helm-descbinds
   :ensure t
