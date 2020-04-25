@@ -46,6 +46,11 @@
   :hook (after-init . line-number-mode)
   :hook (after-init . size-indication-mode))
 
+(use-package all-the-icons
+  :ensure t
+  :if (display-graphic-p)
+  :defer t)
+
 (when (>= emacs-major-version 26)
   (use-package display-line-numbers
     :ensure nil

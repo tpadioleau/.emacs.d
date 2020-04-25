@@ -34,10 +34,6 @@
   :config (setq company-idle-delay 0.25))
 
 (when (>= emacs-major-version 26)
-  (use-package all-the-icons
-    :ensure t
-    :if (display-graphic-p))
-
   (use-package company-box
     :ensure t
     :if (display-graphic-p)
