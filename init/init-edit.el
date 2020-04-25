@@ -79,7 +79,7 @@
 (use-package saveplace
   :ensure nil
   :hook (after-init . save-place-mode)
-  :init (setq save-place-file (concat user-emacs-directory "places")))
+  :config (setq save-place-file (concat user-emacs-directory "places")))
 
 (use-package smartparens
   :ensure t
