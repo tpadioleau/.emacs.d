@@ -28,7 +28,9 @@
 
 ;;; Code:
 
-;; Wait until a mode needs both company and lsp to load company-lsp
+;; Wait until a mode needs both company and lsp to load company-lsp.
+;; Don't use company-capf for now, it doesn't support well snippets
+;; used in C++ template
 (use-package company-lsp
   :ensure t
   :after (:all company lsp-mode)
