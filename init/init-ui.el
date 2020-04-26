@@ -29,16 +29,23 @@
 
 ;;; Code:
 
-(setq inhibit-startup-screen t)
-(setq frame-inhibit-implied-resize t)
-(setq frame-resize-pixelwise t)
+(unless (>= emacs-major-version 27)
+  (setq frame-inhibit-implied-resize t
+        frame-resize-pixelwise t)
 
-(push '(cursor-type . bar) default-frame-alist)
-(push '(fullscreen . maximized) default-frame-alist)
-(push '(horizontal-scroll-bars . nil) default-frame-alist)
-(push '(menu-bar-lines . 0) default-frame-alist)
-(push '(tool-bar-lines . 0) default-frame-alist)
-(push '(vertical-scroll-bars . nil) default-frame-alist)
+  (push '(cursor-type . bar) default-frame-alist)
+  (push '(fullscreen . maximized) default-frame-alist)
+  (push '(horizontal-scroll-bars . nil) default-frame-alist)
+  (push '(menu-bar-lines . 0) default-frame-alist)
+  (push '(tool-bar-lines . 0) default-frame-alist)
+  (push '(vertical-scroll-bars . nil) default-frame-alist))
+
+(setq inhibit-startup-message t
+      inhibit-default-init t
+      ;; Avoid pulling in many packages by starting the scratch buffer in
+      ;; `fundamental-mode', rather than, say, `org-mode' or `text-mode'.
+      initial-major-mode 'fundamental-mode
+      initial-scratch-message nil)
 
 (use-package simple
   :ensure nil
