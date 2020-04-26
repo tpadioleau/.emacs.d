@@ -34,7 +34,6 @@
 (setq mouse-yank-at-point t)
 (setq load-prefer-newer t)
 (setq save-interprogram-paste-before-kill t)
-(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 (setq-default indent-tabs-mode nil)
 
 (set-selection-coding-system 'utf-8)
@@ -78,8 +77,7 @@
 
 (use-package saveplace
   :ensure nil
-  :hook (after-init . save-place-mode)
-  :config (setq save-place-file (concat user-emacs-directory "places")))
+  :hook (after-init . save-place-mode))
 
 (use-package smartparens
   :ensure t

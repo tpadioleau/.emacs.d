@@ -11,23 +11,9 @@
 *.~undo-tree
 
 # Elpa folder
-elpa
+elpa/
 
-# Local configuration file
-custom.el
-
-# Helm
-helm*
-
-# Projectile files
-projectile-bookmarks.eld
-
-# Recentf file
-recentf
-
-# Lsp sessions
-.lsp-session*
-
-# Places
-/places
+# No-littering package
+etc/
+var/
 

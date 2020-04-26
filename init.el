@@ -28,12 +28,6 @@
 
 ;;; Code:
 
-;; Local customization is saved in custom-file.el. This prevents emacs
-;; from writing in this file. "noerror" allows to start emacs even if
-;; the custom-file doesn't exist.
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file 'noerror)
-
 ;; This enables package
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -60,10 +54,26 @@ There are two things you can do about this warning:
 ;; Enables the package "use-package".
 (eval-when-compile
   (require 'use-package))
+
 (use-package bind-key
   :ensure t)
+
 (use-package diminish
   :ensure t)
+
+;; Avoids to spread configuration files.
+(use-package no-littering
+  :ensure t
+  :demand t
+  :config
+  (setq auto-save-file-name-transforms
+        `((".*" ,(no-littering-expand-var-file-name "auto-save/") t))
+        custom-file (no-littering-expand-etc-file-name "custom.el")))
+
+;; Local customization is saved in etc/custom-file.el. This prevents
+;; emacs from writing in this file. "noerror" allows to start emacs
+;; even if the custom-file doesn't exist.
+(load custom-file 'noerror)
 
 ;; Custom packages in .emacs.d/init
 (push (expand-file-name "init" user-emacs-directory) load-path)
