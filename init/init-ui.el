@@ -40,11 +40,9 @@
   (push '(tool-bar-lines . 0) default-frame-alist)
   (push '(vertical-scroll-bars . nil) default-frame-alist))
 
-(setq inhibit-startup-message t
-      inhibit-default-init t
-      ;; Avoid pulling in many packages by starting the scratch buffer in
-      ;; `fundamental-mode', rather than, say, `org-mode' or `text-mode'.
-      initial-major-mode 'fundamental-mode
+;; Avoid pulling in many packages by starting the scratch buffer in
+;; `fundamental-mode', rather than, say, `org-mode' or `text-mode'.
+(setq initial-major-mode 'fundamental-mode
       initial-scratch-message nil)
 
 (use-package simple
