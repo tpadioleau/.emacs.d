@@ -31,7 +31,7 @@
 ;; Local customization is saved in custom-file.el. This prevents emacs
 ;; from writing in this file. "noerror" allows to start emacs even if
 ;; the custom-file doesn't exist.
-(setq custom-file "~/.emacs.d/garbage.el")
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
 ;; This enables package

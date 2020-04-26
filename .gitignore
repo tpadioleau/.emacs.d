@@ -14,7 +14,7 @@
 elpa
 
 # Local configuration file
-garbage.el*
+custom.el
 
 # Helm
 helm*
