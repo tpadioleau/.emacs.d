@@ -30,20 +30,24 @@
 
 (use-package cc-mode
   :ensure t
-  :mode ("\\.[hH]\\'" . c++-mode)
-  :mode ("\\.\\(cu\\|cuh\\)\\'" . c++-mode)
-  :config (progn (setq c-tab-always-indent 'complete)
-                 (setq c-default-style "bsd")
-                 (setq c-basic-offset 4)
-                 (setq c-offsets-alist '((innamespace . 0)))))
+  :mode
+  (("\\.[hH]\\'" . c++-mode)
+   ("\\.\\(cu\\|cuh\\)\\'" . c++-mode))
+  :config
+  (progn (setq c-tab-always-indent 'complete)
+         (setq c-default-style "bsd")
+         (setq c-basic-offset 4)
+         (setq c-offsets-alist '((innamespace . 0)))))
 
 (use-package ccls
   :ensure t
-  :after (:all lsp-mode cc-mode))
+  :after
+  (:all lsp-mode cc-mode))
 
 (use-package modern-cpp-font-lock
   :ensure t
-  :hook (c++-mode . modern-c++-font-lock-mode))
+  :hook
+  (c++-mode . modern-c++-font-lock-mode))
 
 ;; https://www.emacswiki.org/emacs/SrSpeedbar
 (use-package sr-speedbar
