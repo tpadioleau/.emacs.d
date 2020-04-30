@@ -28,6 +28,16 @@
 
 ;;; Code:
 
+(use-package python
+  :ensure nil
+  :defer t
+  :config
+  (progn
+    (setq python-shell-completion-native-enable nil)
+    (when (and (executable-find "python3")
+               (equal python-shell-interpreter "python"))
+      (setq python-shell-interpreter "python3"))))
+
 (use-package live-py-mode
   :ensure t
   :defer t)
