@@ -55,7 +55,21 @@
 
 (use-package whitespace
   :ensure nil
-  :config (setq-default show-trailing-whitespace t))
+  :init
+  (define-minor-mode whitespace-trailing-mode
+    "Toggle trailing visualization (Whitespace Trailing mode).
+
+Inspired by whitespace-newline-mode."
+    :lighter    " nl"
+    :init-value nil
+    :global     nil
+    :group      'whitespace
+    (let ((whitespace-style '(face trailing)))
+      (whitespace-mode (if whitespace-trailing-mode
+			   1 -1)))
+    ;; sync states (running a batch job)
+    (setq whitespace-trailing-mode whitespace-mode))
+  :hook ((prog-mode text-mode) . whitespace-trailing-mode))
 
 (provide 'init-highlight)
 ;;; init-highlight.el ends here
