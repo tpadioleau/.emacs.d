@@ -38,7 +38,6 @@
   :bind (("M-x" . helm-M-x)
 	 ("M-y" . helm-show-kill-ring)
 	 ("C-x C-f" . helm-find-files)
-         ("C-x C-b" . helm-buffers-list)
          ("C-h C-b" . helm-apropos)))
 
 (use-package helm-config

@@ -87,6 +87,7 @@ There are two things you can do about this warning:
 (require 'init-dired)
 (require 'init-edit)
 (require 'init-helm)
+(require 'init-ibuffer)
 (require 'init-lsp)
 (require 'init-md)
 (require 'init-pdf)
