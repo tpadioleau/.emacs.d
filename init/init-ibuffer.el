@@ -42,5 +42,13 @@
   :hook
   (ibuffer-mode . all-the-icons-ibuffer-mode))
 
+(use-package ibuffer-projectile
+  :ensure t
+  :functions all-the-icons-octicon ibuffer-do-sort-by-alphabetic
+  :hook ((ibuffer . (lambda ()
+                      (ibuffer-projectile-set-filter-groups)
+                      (unless (eq ibuffer-sorting-mode 'alphabetic)
+                        (ibuffer-do-sort-by-alphabetic))))))
+
 (provide 'init-ibuffer)
 ;;; init-ibuffer.el ends here
