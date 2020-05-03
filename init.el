@@ -55,6 +55,9 @@ There are two things you can do about this warning:
 (eval-when-compile
   (require 'use-package))
 
+(use-package benchmark-init
+  :ensure t)
+
 (use-package bind-key
   :ensure t)
 
