@@ -89,7 +89,7 @@ There are two things you can do about this warning:
 (require 'init-csv)
 (require 'init-dired)
 (require 'init-edit)
-(require 'init-helm)
+(require 'init-helm-or-ivy)
 (require 'init-ibuffer)
 (require 'init-lsp)
 (require 'init-md)
