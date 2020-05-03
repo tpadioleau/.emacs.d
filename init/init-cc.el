@@ -34,10 +34,10 @@
   (("\\.[hH]\\'" . c++-mode)
    ("\\.\\(cu\\|cuh\\)\\'" . c++-mode))
   :config
-  (progn (setq c-tab-always-indent 'complete)
-         (setq c-default-style "bsd")
-         (setq c-basic-offset 4)
-         (setq c-offsets-alist '((innamespace . 0)))))
+  (setq c-tab-always-indent 'complete
+        c-default-style "bsd"
+        c-basic-offset 4
+        c-offsets-alist '((innamespace . 0))))
 
 (use-package ccls
   :ensure t
