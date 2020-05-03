@@ -41,7 +41,8 @@
   :hook
   ((c-mode c++-mode objc-mode TeX-mode python-mode sh-mode) . lsp-deferred)
   :config
-  (setq lsp-prefer-capf t))
+  (setq lsp-prefer-capf t)
+  (remove-hook 'company-backends 'company-clang))
 
 (use-package lsp-ui
   :ensure t
