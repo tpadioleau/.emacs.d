@@ -44,7 +44,9 @@
   :config
   (setq lsp-prefer-capf t
         read-process-output-max (* 1024 1024)
-        gc-cons-threshold (* gc-cons-threshold 10))
+        gc-cons-threshold (* gc-cons-threshold 10)
+        yas-inhibit-overlay-modification-protection t
+        lsp-completion-enable-additional-text-edit nil)
   (remove-hook 'company-backends 'company-clang))
 
 (use-package lsp-ui
