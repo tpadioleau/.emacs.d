@@ -36,12 +36,15 @@
   :ensure t
   :hook (flycheck-mode . flycheck-clang-tidy-setup))
 
+;; Config to make it lsp-diagnose compliant
 (use-package lsp-mode
   :ensure t
   :hook
   ((c-mode c++-mode objc-mode TeX-mode python-mode sh-mode) . lsp-deferred)
   :config
-  (setq lsp-prefer-capf t)
+  (setq lsp-prefer-capf t
+        read-process-output-max (* 1024 1024)
+        gc-cons-threshold (* gc-cons-threshold 10))
   (remove-hook 'company-backends 'company-clang))
 
 (use-package lsp-ui
