@@ -58,10 +58,6 @@
   :after flyspell
   :bind (:map flyspell-mode-map ("C-;" . flyspell-correct-wrapper)))
 
-(use-package flyspell-correct-helm
-  :ensure t
-  :after flyspell-correct)
-
 (use-package hungry-delete
   :ensure t
   :bind	(("C-c DEL" . hungry-delete-backward)

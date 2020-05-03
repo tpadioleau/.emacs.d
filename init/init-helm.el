@@ -45,6 +45,10 @@
   :ensure helm
   :after helm)
 
+(use-package flyspell-correct-helm
+  :ensure t
+  :after flyspell-correct)
+
 ;; Wait until xref is loaded to modify xref-show-xrefs-function and
 ;; defer helm-ref package loading to the use of helm-xref-show-xrefs
 (use-package helm-xref
