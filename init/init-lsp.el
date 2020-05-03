@@ -28,14 +28,6 @@
 
 ;;; Code:
 
-;; Wait until a mode needs both company and lsp to load company-lsp.
-;; Don't use company-capf for now, it doesn't support well snippets
-;; used in C++ template
-(use-package company-lsp
-  :ensure t
-  :after (:all company lsp-mode)
-  :config (push 'company-lsp company-backends))
-
 (use-package flycheck-clang-analyzer
   :ensure t
   :hook (flycheck-mode . flycheck-clang-analyzer-setup))
@@ -46,7 +38,10 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook ((c-mode c++-mode objc-mode TeX-mode python-mode sh-mode) . lsp-deferred))
+  :hook
+  ((c-mode c++-mode objc-mode TeX-mode python-mode sh-mode) . lsp-deferred)
+  :config
+  (setq lsp-prefer-capf t))
 
 (use-package lsp-ui
   :ensure t
@@ -55,6 +50,7 @@
                 lsp-ui-doc-position 'top
                 lsp-ui-doc-alignment 'window
                 lsp-ui-imenu-enable t
+
                 lsp-ui-sideline-enable nil
                 lsp-ui-sideline-ignore-duplicate nil))
 
