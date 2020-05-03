@@ -31,7 +31,10 @@
 (use-package company
   :ensure t
   :hook ((prog-mode TeX-mode) . company-mode)
-  :config (setq company-idle-delay 0.25))
+  :config
+  (setq company-idle-delay 0.1
+        company-minimum-prefix-length 2
+        company-tooltip-align-annotations t))
 
 (when (>= emacs-major-version 26)
   (use-package company-box
