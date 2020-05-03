@@ -61,6 +61,11 @@
   :ensure t
   :hook (after-init . helm-descbinds-mode))
 
+(use-package helm-swoop
+  :ensure t
+  :bind
+  ("C-s" . helm-swoop))
+
 ;; Wait until a mode needs company to define key-binding
 (use-package helm-company
   :ensure t
