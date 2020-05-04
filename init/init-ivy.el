@@ -66,7 +66,7 @@
   :hook
   (counsel-mode . all-the-icons-ivy-setup)
   :custom
-  (all-the-icons-spacer nil))
+  (all-the-icons-spacer " "))
 
 (use-package lsp-ivy
   :ensure t
