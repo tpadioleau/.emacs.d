@@ -58,8 +58,9 @@
 (use-package ivy-xref
   :ensure t
   :after xref
-  :init (setq xref-show-xrefs-function 'ivy-xref-show-xrefs)
-  :commands helm-xref-show-xrefs)
+  :init
+  (setq xref-show-xrefs-function 'ivy-xref-show-xrefs)
+  :commands ivy-xref-show-xrefs)
 
 (use-package all-the-icons-ivy
   :ensure t
