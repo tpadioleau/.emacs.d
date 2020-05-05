@@ -33,8 +33,7 @@
   :hook
   (after-init . ivy-mode)
   :config
-  (setq enable-recursive-minibuffers t
-        ivy-fixed-height-minibuffer t))
+  (setq ivy-fixed-height-minibuffer t))
 
 (use-package swiper
   :ensure t
