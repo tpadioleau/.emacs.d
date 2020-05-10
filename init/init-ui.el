@@ -47,9 +47,10 @@
 
 (use-package simple
   :ensure nil
-  :hook (after-init . column-number-mode)
-  :hook (after-init . line-number-mode)
-  :hook (after-init . size-indication-mode))
+  :hook
+  ((after-init . column-number-mode)
+   (after-init . line-number-mode)
+   (after-init . size-indication-mode)))
 
 (use-package all-the-icons
   :ensure t
@@ -59,19 +60,26 @@
 (when (>= emacs-major-version 26)
   (use-package display-line-numbers
     :ensure nil
-    :hook ((prog-mode text-mode) . display-line-numbers-mode)))
+    :hook
+    ((prog-mode text-mode) . display-line-numbers-mode))
+    :config
+    (setq display-line-numbers-width-start t))
 
 (use-package doom-modeline
   :ensure t
-  :hook (after-init . doom-modeline-mode)
-  :config (setq doom-modeline-icon t))
+  :hook
+  (after-init . doom-modeline-mode)
+  :config
+  (setq doom-modeline-icon t))
 
 (use-package doom-themes
   :ensure t
-  :config (progn (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-                       doom-themes-enable-italic t) ; if nil, italics is universally disabled
-                 (load-theme 'doom-vibrant t)
-                 (doom-themes-visual-bell-config)))
+  :config
+  (progn
+    (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+          doom-themes-enable-italic t) ; if nil, italics is universally disabled
+    (load-theme 'doom-vibrant t)
+    (doom-themes-visual-bell-config)))
 
 (provide 'init-ui)
 ;;; init-ui.el ends here
