@@ -28,6 +28,9 @@
 
 ;;; Code:
 
+(setq gc-cons-threshold 16777216 ; 16mb
+      gc-cons-percentage 0.1)
+
 ;; This enables package
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -57,6 +60,10 @@ There are two things you can do about this warning:
 
 (use-package benchmark-init
   :ensure t)
+
+(use-package gcmh
+  :ensure t
+  :hook (after-init . gcmh-mode))
 
 (use-package bind-key
   :ensure t)
