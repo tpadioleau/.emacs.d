@@ -33,6 +33,7 @@
 
 ;; This enables package
 (require 'package)
+
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
        (proto (if no-ssl "http" "https")))
@@ -102,6 +103,7 @@ There are two things you can do about this warning:
 (require 'init-cmake)
 (require 'init-csv)
 (require 'init-dired)
+(require 'init-emacs-lisp)
 (require 'init-ibuffer)
 (require 'init-md)
 (require 'init-pdf)
