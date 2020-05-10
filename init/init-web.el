@@ -30,9 +30,10 @@
 
 (use-package web-mode
   :ensure t
-  :mode (("\\.html?\\'" . web-mode)
-         ("\\.js?\\'" . web-mode)
-         ("\\.php\\'" . web-mode)))
+  :mode
+  (("\\.html?\\'" . web-mode)
+   ("\\.js?\\'" . web-mode)
+   ("\\.php\\'" . web-mode)))
 
 (use-package company-web
   :ensure t
