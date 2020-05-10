@@ -110,4 +110,5 @@ There are two things you can do about this warning:
 (require 'init-python)
 (require 'init-tex)
 (require 'init-web)
+(require 'init-yaml)
 ;;; init.el ends here
