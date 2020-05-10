@@ -31,6 +31,7 @@
 (use-package company
   :ensure t
   :hook ((prog-mode TeX-mode) . company-mode)
+  :bind (:map company-mode-map ("TAB" . company-indent-or-complete-common))
   :config
   (setq company-idle-delay 0.1
         company-minimum-prefix-length 2
