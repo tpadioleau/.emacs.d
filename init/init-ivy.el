@@ -65,6 +65,20 @@
   :ensure t
   :hook
   (counsel-mode . all-the-icons-ivy-setup)
+  :config
+  (progn
+    (defun my-all-the-icons-ivy-icon-for-file (s)
+      "Return icon for filename S.
+Return the octicon for directory if S is a directory.
+Otherwise fallback to calling `all-the-icons-icon-for-file'."
+      (let ((s-abs (expand-file-name s (ivy-state-directory ivy-last))))
+        (cond
+         ((file-directory-p s-abs)
+          (all-the-icons-icon-for-dir s-abs))
+         (t (all-the-icons-icon-for-file s)))))
+
+    (advice-add 'all-the-icons-ivy-icon-for-file :override
+                'my-all-the-icons-ivy-icon-for-file))
   :custom
   (all-the-icons-spacer " "))
 
