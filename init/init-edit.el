@@ -49,7 +49,7 @@
 		 (setq clean-aindent-is-simple-indent t)))
 
 (use-package flyspell
-  :ensure t
+  :ensure nil
   :hook ((text-mode . flyspell-mode)
          (prog-mode . flyspell-prog-mode)))
 

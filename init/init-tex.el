@@ -41,7 +41,7 @@
     (add-hook 'TeX-after-compilation-finished-functions 'TeX-revert-document-buffer)))
 
 (use-package reftex
-  :ensure t
+  :ensure nil
   :hook (TeX-mode . reftex-mode)
   :config
   (setq reftex-cite-prompt-optional-args t

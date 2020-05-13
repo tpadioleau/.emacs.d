@@ -29,7 +29,7 @@
 ;;; Code:
 
 (use-package cc-mode
-  :ensure t
+  :ensure nil
   :mode
   (("\\.[hH]\\'" . c++-mode)
    ("\\.\\(cu\\|cuh\\)\\'" . c++-mode))
