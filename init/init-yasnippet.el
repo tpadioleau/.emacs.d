@@ -31,7 +31,7 @@
 
 (use-package yasnippet
   :ensure t
-  :hook ((prog-mode TeX-mode) . yas-minor-mode))
+  :hook ((prog-mode-hook TeX-mode-hook) . yas-minor-mode))
 
 (use-package yasnippet-snippets
   :ensure t

@@ -42,7 +42,7 @@
 
 (use-package reftex
   :ensure nil
-  :hook (TeX-mode . reftex-mode)
+  :hook (TeX-mode-hook . reftex-mode)
   :config
   (setq reftex-cite-prompt-optional-args t
         reftex-plug-into-AUCTeX t))

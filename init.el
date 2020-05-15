@@ -59,14 +59,15 @@ There are two things you can do about this warning:
 
 ;; Enables the package "use-package".
 (eval-when-compile
-  (require 'use-package))
+  (require 'use-package)
+  (setq use-package-hook-name-suffix nil))
 
 (use-package benchmark-init
   :ensure t)
 
 (use-package gcmh
   :ensure t
-  :hook (after-init . gcmh-mode))
+  :hook (after-init-hook . gcmh-mode))
 
 (use-package bind-key
   :ensure t)

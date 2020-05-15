@@ -48,9 +48,9 @@
 (use-package simple
   :ensure nil
   :hook
-  ((after-init . column-number-mode)
-   (after-init . line-number-mode)
-   (after-init . size-indication-mode)))
+  ((after-init-hook . column-number-mode)
+   (after-init-hook . line-number-mode)
+   (after-init-hook . size-indication-mode)))
 
 (use-package all-the-icons
   :ensure t
@@ -61,14 +61,14 @@
   (use-package display-line-numbers
     :ensure nil
     :hook
-    ((prog-mode text-mode) . display-line-numbers-mode))
+    ((prog-mode-hook text-mode-hook) . display-line-numbers-mode))
     :config
     (setq display-line-numbers-width-start t))
 
 (use-package doom-modeline
   :ensure t
   :hook
-  (after-init . doom-modeline-mode)
+  (after-init-hook . doom-modeline-mode)
   :config
   (setq doom-modeline-icon t))
 

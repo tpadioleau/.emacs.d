@@ -31,7 +31,7 @@
 (use-package ivy
   :ensure t
   :hook
-  (after-init . ivy-mode)
+  (after-init-hook . ivy-mode)
   :config
   (setq ivy-fixed-height-minibuffer t))
 
@@ -42,7 +42,7 @@
 (use-package counsel
   :ensure t
   :hook
-  (ivy-mode . counsel-mode)
+  (ivy-mode-hook . counsel-mode)
   :bind
   (:map counsel-mode-map
         ("C-s" . counsel-grep-or-swiper)
@@ -64,7 +64,7 @@
 (use-package all-the-icons-ivy
   :ensure t
   :hook
-  (counsel-mode . all-the-icons-ivy-setup)
+  (counsel-mode-hook . all-the-icons-ivy-setup)
   :config
   (progn
     (defun my-all-the-icons-ivy-icon-for-file (s)

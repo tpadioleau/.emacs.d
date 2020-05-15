@@ -58,7 +58,7 @@
 
 (use-package helm-descbinds
   :ensure t
-  :hook (after-init . helm-descbinds-mode))
+  :hook (after-init-hook . helm-descbinds-mode))
 
 (use-package helm-swoop
   :ensure t

@@ -31,11 +31,11 @@
 
 (use-package all-the-icons-dired
   :ensure t
-  :hook (dired-mode . all-the-icons-dired-mode))
+  :hook (dired-mode-hook . all-the-icons-dired-mode))
 
 (use-package diredfl
   :ensure t
-  :hook (dired-mode . diredfl-mode))
+  :hook (dired-mode-hook . diredfl-mode))
 
 (provide 'init-dired)
 ;;; init-dired.el ends here

@@ -47,7 +47,7 @@
 (use-package modern-cpp-font-lock
   :ensure t
   :hook
-  (c++-mode . modern-c++-font-lock-mode))
+  (c++-mode-hook . modern-c++-font-lock-mode))
 
 ;; https://www.emacswiki.org/emacs/SrSpeedbar
 (use-package sr-speedbar

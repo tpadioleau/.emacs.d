@@ -31,7 +31,7 @@
 (use-package flycheck-package
   :ensure t
   :hook
-  (emacs-lisp-mode . flycheck-package-setup))
+  (emacs-lisp-mode-hook . flycheck-package-setup))
 
 (provide 'init-emacs-lisp)
 ;;; init-emacs-lisp.el ends here

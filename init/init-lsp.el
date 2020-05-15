@@ -30,17 +30,17 @@
 
 (use-package flycheck-clang-analyzer
   :ensure t
-  :hook (flycheck-mode . flycheck-clang-analyzer-setup))
+  :hook (flycheck-mode-hook . flycheck-clang-analyzer-setup))
 
 (use-package flycheck-clang-tidy
   :ensure t
-  :hook (flycheck-mode . flycheck-clang-tidy-setup))
+  :hook (flycheck-mode-hook . flycheck-clang-tidy-setup))
 
 ;; Config to make it lsp-diagnose compliant
 (use-package lsp-mode
   :ensure t
   :hook
-  ((c-mode c++-mode objc-mode TeX-mode python-mode sh-mode) . lsp-deferred)
+  ((c-mode-hook c++-mode-hook objc-mode-hook TeX-mode-hook python-mode-hook sh-mode-hook) . lsp-deferred)
   :config
   (setq lsp-prefer-capf t
         read-process-output-max (* 1024 1024)
@@ -50,7 +50,7 @@
 
 (use-package lsp-ui
   :ensure t
-  :hook (lsp-mode . lsp-ui-mode)
+  :hook (lsp-mode-hook . lsp-ui-mode)
   :config (setq lsp-ui-doc-enable t
                 lsp-ui-doc-position 'top
                 lsp-ui-doc-alignment 'window
@@ -61,7 +61,7 @@
 
 (use-package flymake-diagnostic-at-point
   :ensure t
-  :hook (flymake-mode . flymake-diagnostic-at-point-mode))
+  :hook (flymake-mode-hook . flymake-diagnostic-at-point-mode))
 
 (use-package format-all
   :ensure t

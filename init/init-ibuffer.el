@@ -40,7 +40,7 @@
 (use-package all-the-icons-ibuffer
   :ensure t
   :hook
-  (ibuffer-mode . all-the-icons-ibuffer-mode))
+  (ibuffer-mode-hook . all-the-icons-ibuffer-mode))
 
 (use-package ibuffer-projectile
   :ensure t

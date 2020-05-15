@@ -44,14 +44,14 @@
 
 (use-package clean-aindent-mode
   :ensure t
-  :hook (after-init . clean-aindent-mode)
+  :hook (after-init-hook . clean-aindent-mode)
   :config (progn (electric-indent-mode -1)
 		 (setq clean-aindent-is-simple-indent t)))
 
 (use-package flyspell
   :ensure nil
-  :hook ((text-mode . flyspell-mode)
-         (prog-mode . flyspell-prog-mode)))
+  :hook ((text-mode-hook . flyspell-mode)
+         (prog-mode-hook . flyspell-prog-mode)))
 
 (use-package flyspell-correct
   :ensure t
@@ -73,23 +73,23 @@
 
 (use-package saveplace
   :ensure nil
-  :hook (after-init . save-place-mode))
+  :hook (after-init-hook . save-place-mode))
 
 (use-package smartparens
   :ensure t
-  :hook ((prog-mode text-mode) . smartparens-mode)
+  :hook ((prog-mode-hook text-mode-hook) . smartparens-mode)
   :config (use-package smartparens-config))
 
 (use-package undo-tree
   :ensure t
-  :hook (after-init . global-undo-tree-mode))
+  :hook (after-init-hook . global-undo-tree-mode))
 
 (use-package uniquify
   :ensure nil)
 
 (use-package windmove
   :ensure nil
-  :hook (after-init . windmove-default-keybindings))
+  :hook (after-init-hook . windmove-default-keybindings))
 
 (use-package zygospore
   :ensure t

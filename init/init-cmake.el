@@ -43,7 +43,7 @@
       (cmake-font-lock-activate)
       (rainbow-delimiters-mode-enable)))
   :hook
-  (cmake-mode . wrapper-cmake-font-lock-activate))
+  (cmake-mode-hook . wrapper-cmake-font-lock-activate))
 
 (provide 'init-cmake)
 ;;; init-cmake.el ends here
