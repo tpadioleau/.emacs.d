@@ -79,10 +79,8 @@ There are two things you can do about this warning:
 ;; Avoids to spread configuration files.
 (use-package no-littering
   :ensure t
-  :demand t
   :config
-  (setq auto-save-file-name-transforms
-        `((".*" ,(no-littering-expand-var-file-name "auto-save/") t))
+  (setq auto-save-file-name-transforms `((".*" ,(no-littering-expand-var-file-name "auto-save/") t))
         custom-file (no-littering-expand-etc-file-name "custom.el")))
 
 ;; Custom packages in .emacs.d/init
