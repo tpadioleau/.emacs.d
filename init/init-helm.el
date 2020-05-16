@@ -77,7 +77,7 @@
 
 (use-package helm-lsp
   :ensure t
-  :commands helm-lsp-workspace-symbol)
+  :defer t)
 
 (provide 'init-helm)
 ;;; init-helm.el ends here

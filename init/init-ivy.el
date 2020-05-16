@@ -84,7 +84,7 @@ Otherwise fallback to calling `all-the-icons-icon-for-file'."
 
 (use-package lsp-ivy
   :ensure t
-  :commands lsp-ivy-workspace-symbol)
+  :defer t)
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here
