@@ -67,7 +67,8 @@ There are two things you can do about this warning:
 
 (use-package gcmh
   :ensure t
-  :hook (after-init-hook . gcmh-mode))
+  :hook
+  (after-init-hook . gcmh-mode))
 
 (use-package bind-key
   :ensure t)
@@ -95,6 +96,7 @@ There are two things you can do about this warning:
 (require 'init-company)
 (require 'init-edit)
 (require 'init-lsp)
+(require 'init-projectile)
 (require 'init-utils)
 (require 'init-yasnippet)
 
