@@ -39,7 +39,7 @@
   :after yasnippet
   :config
   (progn
-    (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+    (setq yas-snippet-dirs `(,(expand-file-name "snippets/" user-emacs-directory)))
     (yas-reload-all)))
 
 (provide 'init-yasnippet)
