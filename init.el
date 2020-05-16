@@ -84,19 +84,16 @@ There are two things you can do about this warning:
         `((".*" ,(no-littering-expand-var-file-name "auto-save/") t))
         custom-file (no-littering-expand-etc-file-name "custom.el")))
 
-;; Local customization is saved in etc/custom-file.el. This prevents
-;; emacs from writing in this file. "noerror" allows to start emacs
-;; even if the custom-file doesn't exist.
-(load custom-file 'noerror)
-
 ;; Custom packages in .emacs.d/init
 (push (expand-file-name "init" user-emacs-directory) load-path)
 (require 'init-highlight)
 (require 'init-ui)
 
+;; (require 'init-helm)
+(require 'init-ivy)
+
 (require 'init-company)
 (require 'init-edit)
-(require 'init-helm-or-ivy)
 (require 'init-lsp)
 (require 'init-utils)
 (require 'init-yasnippet)
@@ -114,4 +111,9 @@ There are two things you can do about this warning:
 (require 'init-tex)
 (require 'init-web)
 (require 'init-yaml)
+
+;; Local customization is saved in etc/custom-file.el. This prevents
+;; emacs from writing in this file. "noerror" allows to start emacs
+;; even if the custom-file doesn't exist.
+(load custom-file 'noerror)
 ;;; init.el ends here
