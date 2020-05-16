@@ -30,11 +30,13 @@
 
 (use-package flycheck-clang-analyzer
   :ensure t
-  :hook (flycheck-mode-hook . flycheck-clang-analyzer-setup))
+  :hook
+  (flycheck-mode-hook . flycheck-clang-analyzer-setup))
 
 (use-package flycheck-clang-tidy
   :ensure t
-  :hook (flycheck-mode-hook . flycheck-clang-tidy-setup))
+  :hook
+  (flycheck-mode-hook . flycheck-clang-tidy-setup))
 
 ;; Config to make it lsp-diagnose compliant
 (use-package lsp-mode
@@ -50,18 +52,20 @@
 
 (use-package lsp-ui
   :ensure t
-  :hook (lsp-mode-hook . lsp-ui-mode)
-  :config (setq lsp-ui-doc-enable t
-                lsp-ui-doc-position 'top
-                lsp-ui-doc-alignment 'window
-                lsp-ui-imenu-enable t
-
-                lsp-ui-sideline-enable nil
-                lsp-ui-sideline-ignore-duplicate nil))
+  :hook
+  (lsp-mode-hook . lsp-ui-mode)
+  :config
+  (setq lsp-ui-doc-enable t
+        lsp-ui-doc-position 'top
+        lsp-ui-doc-alignment 'window
+        lsp-ui-imenu-enable t
+        lsp-ui-sideline-enable nil
+        lsp-ui-sideline-ignore-duplicate nil))
 
 (use-package flymake-diagnostic-at-point
   :ensure t
-  :hook (flymake-mode-hook . flymake-diagnostic-at-point-mode))
+  :hook
+  (flymake-mode-hook . flymake-diagnostic-at-point-mode))
 
 (use-package format-all
   :ensure t

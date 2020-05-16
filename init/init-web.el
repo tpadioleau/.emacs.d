@@ -38,7 +38,8 @@
 (use-package company-web
   :ensure t
   :disabled
-  :config (add-to-list 'company-backends 'company-web-html))
+  :config
+  (add-to-list 'company-backends 'company-web-html))
 
 (provide 'init-web)
 ;;; init-web ends here

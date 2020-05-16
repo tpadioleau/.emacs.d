@@ -44,56 +44,68 @@
 
 (use-package clean-aindent-mode
   :ensure t
-  :hook (after-init-hook . clean-aindent-mode)
-  :config (progn (electric-indent-mode -1)
-		 (setq clean-aindent-is-simple-indent t)))
+  :hook
+  (after-init-hook . clean-aindent-mode)
+  :config
+  (progn (electric-indent-mode -1)
+	 (setq clean-aindent-is-simple-indent t)))
 
 (use-package flyspell
   :ensure nil
-  :hook ((text-mode-hook . flyspell-mode)
-         (prog-mode-hook . flyspell-prog-mode)))
+  :hook
+  ((text-mode-hook . flyspell-mode)
+   (prog-mode-hook . flyspell-prog-mode)))
 
 (use-package flyspell-correct
   :ensure t
   :after flyspell
-  :bind (:map flyspell-mode-map ("C-;" . flyspell-correct-wrapper)))
+  :bind
+  (:map flyspell-mode-map ("C-;" . flyspell-correct-wrapper)))
 
 (use-package hungry-delete
   :ensure t
-  :bind	(("C-c DEL" . hungry-delete-backward)
-         ("C-c C-d" . hungry-delete-forward)))
+  :bind
+  (("C-c DEL" . hungry-delete-backward)
+   ("C-c C-d" . hungry-delete-forward)))
 
 (use-package mwim
   :ensure t
-  :bind (("C-a" . mwim-beginning-of-code-or-line)
-         ("C-e" . mwim-end-of-code-or-line)))
+  :bind
+  (("C-a" . mwim-beginning-of-code-or-line)
+   ("C-e" . mwim-end-of-code-or-line)))
 
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "<f5>") 'revert-buffer)
 
 (use-package saveplace
   :ensure nil
-  :hook (after-init-hook . save-place-mode))
+  :hook
+  (after-init-hook . save-place-mode))
 
 (use-package smartparens
   :ensure t
-  :hook ((prog-mode-hook text-mode-hook) . smartparens-mode)
-  :config (use-package smartparens-config))
+  :hook
+  ((prog-mode-hook text-mode-hook) . smartparens-mode)
+  :config
+  (use-package smartparens-config))
 
 (use-package undo-tree
   :ensure t
-  :hook (after-init-hook . global-undo-tree-mode))
+  :hook
+  (after-init-hook . global-undo-tree-mode))
 
 (use-package uniquify
   :ensure nil)
 
 (use-package windmove
   :ensure nil
-  :hook (after-init-hook . windmove-default-keybindings))
+  :hook
+  (after-init-hook . windmove-default-keybindings))
 
 (use-package zygospore
   :ensure t
-  :bind ("C-x 1" . zygospore-toggle-delete-other-windows))
+  :bind
+  ("C-x 1" . zygospore-toggle-delete-other-windows))
 
 (provide 'init-edit)
 ;;; init-edit.el ends here

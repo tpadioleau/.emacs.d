@@ -30,8 +30,10 @@
 
 (use-package company
   :ensure t
-  :hook ((prog-mode-hook TeX-mode-hook) . company-mode)
-  :bind (:map company-mode-map ("TAB" . company-indent-or-complete-common))
+  :hook
+  ((prog-mode-hook TeX-mode-hook) . company-mode)
+  :bind
+  (:map company-mode-map ("TAB" . company-indent-or-complete-common))
   :config
   (setq company-idle-delay 0.1
         company-minimum-prefix-length 2
@@ -41,8 +43,10 @@
   (use-package company-box
     :ensure t
     :if (display-graphic-p)
-    :hook (company-mode-hook . company-box-mode)
-    :config (setq company-box-icons-alist 'company-box-icons-all-the-icons)))
+    :hook
+    (company-mode-hook . company-box-mode)
+    :config
+    (setq company-box-icons-alist 'company-box-icons-all-the-icons)))
 
 (provide 'init-company)
 ;;; init-company.el ends here

@@ -31,13 +31,16 @@
 
 (use-package yasnippet
   :ensure t
-  :hook ((prog-mode-hook TeX-mode-hook) . yas-minor-mode))
+  :hook
+  ((prog-mode-hook TeX-mode-hook) . yas-minor-mode))
 
 (use-package yasnippet-snippets
   :ensure t
   :after yasnippet
-  :config (progn (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-                 (yas-reload-all)))
+  :config
+  (progn
+    (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+    (yas-reload-all)))
 
 (provide 'init-yasnippet)
 ;;; init-yasnippet.el ends here

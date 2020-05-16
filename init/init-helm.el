@@ -35,10 +35,11 @@
 
 (use-package helm
   :ensure t
-  :bind (("M-x" . helm-M-x)
-	 ("M-y" . helm-show-kill-ring)
-	 ("C-x C-f" . helm-find-files)
-         ("C-h C-b" . helm-apropos)))
+  :bind
+  (("M-x" . helm-M-x)
+   ("M-y" . helm-show-kill-ring)
+   ("C-x C-f" . helm-find-files)
+   ("C-h C-b" . helm-apropos)))
 
 (use-package helm-config
   :ensure helm
@@ -53,12 +54,14 @@
 (use-package helm-xref
   :ensure t
   :after xref
-  :init (setq xref-show-xrefs-function 'helm-xref-show-xrefs)
+  :init
+  (setq xref-show-xrefs-function 'helm-xref-show-xrefs)
   :commands helm-xref-show-xrefs)
 
 (use-package helm-descbinds
   :ensure t
-  :hook (after-init-hook . helm-descbinds-mode))
+  :hook
+  (after-init-hook . helm-descbinds-mode))
 
 (use-package helm-swoop
   :ensure t
@@ -69,7 +72,8 @@
 (use-package helm-company
   :ensure t
   :after company
-  :bind (:map company-mode-map ("C-<tab>" . helm-company)))
+  :bind
+  (:map company-mode-map ("C-<tab>" . helm-company)))
 
 (use-package helm-lsp
   :ensure t
