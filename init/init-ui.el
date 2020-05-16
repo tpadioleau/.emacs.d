@@ -61,9 +61,9 @@
   (use-package display-line-numbers
     :ensure nil
     :hook
-    ((prog-mode-hook text-mode-hook) . display-line-numbers-mode))
+    ((prog-mode-hook text-mode-hook) . display-line-numbers-mode)
     :config
-    (setq display-line-numbers-width-start t))
+    (setq display-line-numbers-width-start t)))
 
 (use-package doom-modeline
   :ensure t
