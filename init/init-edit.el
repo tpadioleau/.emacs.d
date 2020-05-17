@@ -46,9 +46,10 @@
   :ensure t
   :hook
   (after-init-hook . clean-aindent-mode)
+  :custom
+  (clean-aindent-is-simple-indent t)
   :config
-  (progn (electric-indent-mode -1)
-	 (setq clean-aindent-is-simple-indent t)))
+  (electric-indent-mode -1))
 
 (use-package flyspell
   :ensure nil

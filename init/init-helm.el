@@ -53,10 +53,9 @@
 ;; defer helm-ref package loading to the use of helm-xref-show-xrefs
 (use-package helm-xref
   :ensure t
-  :after xref
-  :init
-  (setq xref-show-xrefs-function 'helm-xref-show-xrefs)
-  :commands helm-xref-show-xrefs)
+  :defer t
+  :custom
+  (xref-show-xrefs-function 'helm-xref-show-xrefs))
 
 (use-package helm-descbinds
   :ensure t

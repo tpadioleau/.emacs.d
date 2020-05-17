@@ -32,8 +32,8 @@
   :ensure t
   :hook
   (after-init-hook . ivy-mode)
-  :config
-  (setq ivy-fixed-height-minibuffer t))
+  :custom
+  (ivy-fixed-height-minibuffer t))
 
 (use-package swiper
   :ensure t
@@ -47,8 +47,8 @@
   (:map counsel-mode-map
         ("C-s" . counsel-grep-or-swiper)
         ("C-r" . counsel-grep-or-swiper-backward))
-  :config
-  (setq counsel-find-file-at-point t))
+  :custom
+  (counsel-find-file-at-point t))
 
 (use-package flyspell-correct-ivy
   :ensure t
@@ -56,10 +56,9 @@
 
 (use-package ivy-xref
   :ensure t
-  :after xref
-  :init
-  (setq xref-show-xrefs-function 'ivy-xref-show-xrefs)
-  :commands ivy-xref-show-xrefs)
+  :defer t
+  :custom
+  (ref-show-xrefs-function 'ivy-xref-show-xrefs))
 
 (use-package all-the-icons-ivy
   :ensure t

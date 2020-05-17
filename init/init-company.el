@@ -34,10 +34,10 @@
   ((prog-mode-hook TeX-mode-hook) . company-mode)
   :bind
   (:map company-mode-map ("TAB" . company-indent-or-complete-common))
-  :config
-  (setq company-idle-delay 0.1
-        company-minimum-prefix-length 2
-        company-tooltip-align-annotations t))
+  :custom
+  (company-idle-delay 0.1)
+  (company-minimum-prefix-length 2)
+  (company-tooltip-align-annotations t))
 
 (when (>= emacs-major-version 26)
   (use-package company-box
@@ -45,8 +45,8 @@
     :if (display-graphic-p)
     :hook
     (company-mode-hook . company-box-mode)
-    :config
-    (setq company-box-icons-alist 'company-box-icons-all-the-icons)))
+    :custom
+    (company-box-icons-alist 'company-box-icons-all-the-icons)))
 
 (provide 'init-company)
 ;;; init-company.el ends here

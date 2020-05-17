@@ -43,11 +43,11 @@
   :ensure nil
   :hook
   (after-init-hook . show-paren-mode)
-  :config
-  (progn
-    (setq show-paren-when-point-in-periphery t
-          show-paren-when-point-inside-paren t)
-    (set-face-attribute 'show-paren-match nil :background 'unspecified)))
+  :custom
+  (show-paren-when-point-in-periphery t)
+  (show-paren-when-point-inside-paren t)
+  :custom-face
+  (show-paren-match ((t (:background unspecified)))))
 
 (use-package rainbow-mode
   :ensure t
