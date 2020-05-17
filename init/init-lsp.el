@@ -43,24 +43,25 @@
   :ensure t
   :hook
   ((c-mode-hook c++-mode-hook objc-mode-hook TeX-mode-hook python-mode-hook sh-mode-hook) . lsp-deferred)
+  :custom
+  (lsp-prefer-capf t)
+  (read-process-output-max (* 1024 1024))
+  (gc-cons-threshold (* gc-cons-threshold 10))
+  (lsp-completion-enable-additional-text-edit nil)
   :config
-  (setq lsp-prefer-capf t
-        read-process-output-max (* 1024 1024)
-        gc-cons-threshold (* gc-cons-threshold 10)
-        lsp-completion-enable-additional-text-edit nil)
   (remove-hook 'company-backends 'company-clang))
 
 (use-package lsp-ui
   :ensure t
   :hook
   (lsp-mode-hook . lsp-ui-mode)
-  :config
-  (setq lsp-ui-doc-enable t
-        lsp-ui-doc-position 'top
-        lsp-ui-doc-alignment 'window
-        lsp-ui-imenu-enable t
-        lsp-ui-sideline-enable nil
-        lsp-ui-sideline-ignore-duplicate nil))
+  :custom
+  (lsp-ui-doc-enable t)
+  (lsp-ui-doc-position 'top)
+  (lsp-ui-doc-alignment 'window)
+  (lsp-ui-imenu-enable t)
+  (lsp-ui-sideline-enable nil)
+  (lsp-ui-sideline-ignore-duplicate nil))
 
 (use-package flymake-diagnostic-at-point
   :ensure t

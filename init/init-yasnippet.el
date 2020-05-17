@@ -37,10 +37,10 @@
 (use-package yasnippet-snippets
   :ensure t
   :after yasnippet
+  :custom
+  (yas-snippet-dirs `(,(expand-file-name "snippets/" user-emacs-directory)))
   :config
-  (progn
-    (setq yas-snippet-dirs `(,(expand-file-name "snippets/" user-emacs-directory)))
-    (yas-reload-all)))
+  (yas-reload-all))
 
 (provide 'init-yasnippet)
 ;;; init-yasnippet.el ends here

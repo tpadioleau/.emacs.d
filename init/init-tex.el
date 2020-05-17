@@ -31,22 +31,22 @@
 (use-package tex
   :ensure auctex
   :defer t
+  :custom
+  (TeX-auto-save t)
+  (TeX-parse-self t)
+  (TeX-view-program-selection '((output-pdf "PDF Tools")))
+  (TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view)))
+  (TeX-source-correlate-mode t)
   :config
-  (progn
-    (setq TeX-auto-save t
-          TeX-parse-self t
-          TeX-view-program-selection '((output-pdf "PDF Tools"))
-          TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view))
-          TeX-source-correlate-mode t)
-    (add-hook 'TeX-after-compilation-finished-functions 'TeX-revert-document-buffer)))
+  (add-hook 'TeX-after-compilation-finished-functions 'TeX-revert-document-buffer))
 
 (use-package reftex
   :ensure nil
   :hook
   (TeX-mode-hook . reftex-mode)
-  :config
-  (setq reftex-cite-prompt-optional-args t
-        reftex-plug-into-AUCTeX t))
+  :custom
+  (reftex-cite-prompt-optional-args t)
+  (reftex-plug-into-AUCTeX t))
 
 (use-package academic-phrases
   :ensure t

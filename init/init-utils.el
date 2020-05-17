@@ -33,9 +33,9 @@
   :ensure t
   :hook
   ((prog-mode-hook text-mode-hook) . which-key-mode)
-  :config
-  (setq which-key-idle-delay 2.0
-        which-key-popup-type 'side-window))
+  :custom
+  (which-key-idle-delay 2.0)
+  (which-key-popup-type 'side-window))
 
 ;; profiling package
 (use-package esup

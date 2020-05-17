@@ -62,24 +62,24 @@
     :ensure nil
     :hook
     ((prog-mode-hook text-mode-hook) . display-line-numbers-mode)
-    :config
-    (setq display-line-numbers-width-start t)))
+    :custom
+    (display-line-numbers-width-start t)))
 
 (use-package doom-modeline
   :ensure t
   :hook
   (after-init-hook . doom-modeline-mode)
-  :config
-  (setq doom-modeline-icon t))
+  :custom
+  (doom-modeline-icon t))
 
 (use-package doom-themes
   :ensure t
+  :custom
+  (doom-themes-enable-bold t)   ; if nil, bold is universally disabled
+  (doom-themes-enable-italic t) ; if nil, italics is universally disabled
   :config
-  (progn
-    (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-          doom-themes-enable-italic t) ; if nil, italics is universally disabled
-    (load-theme 'doom-vibrant t)
-    (doom-themes-visual-bell-config)))
+  (load-theme 'doom-vibrant t)
+  (doom-themes-visual-bell-config))
 
 (provide 'init-ui)
 ;;; init-ui.el ends here
