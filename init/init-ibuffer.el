@@ -51,7 +51,7 @@
     (unless (eq ibuffer-sorting-mode 'alphabetic)
       (ibuffer-do-sort-by-alphabetic)))
   :hook
-  (ibuffer . apply-ibuffer-projectile))
+  (ibuffer-hook . apply-ibuffer-projectile))
 
 (provide 'init-ibuffer)
 ;;; init-ibuffer.el ends here
