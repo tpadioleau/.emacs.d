@@ -42,7 +42,8 @@
 (use-package lsp-mode
   :ensure t
   :hook
-  ((c-mode-hook c++-mode-hook objc-mode-hook TeX-mode-hook python-mode-hook sh-mode-hook) . lsp-deferred)
+  ((c-mode-hook c++-mode-hook objc-mode-hook TeX-mode-hook
+                python-mode-hook sh-mode-hook) . lsp-deferred)
   :custom
   (lsp-completion-enable-additional-text-edit nil)
   (lsp-prefer-capf t)
