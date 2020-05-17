@@ -41,8 +41,7 @@
 
 (use-package ccls
   :ensure t
-  :after
-  (:all lsp-mode cc-mode))
+  :no-require t)
 
 (use-package modern-cpp-font-lock
   :ensure t
