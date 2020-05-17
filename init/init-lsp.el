@@ -28,16 +28,6 @@
 
 ;;; Code:
 
-(use-package flycheck-clang-analyzer
-  :ensure t
-  :hook
-  (flycheck-mode-hook . flycheck-clang-analyzer-setup))
-
-(use-package flycheck-clang-tidy
-  :ensure t
-  :hook
-  (flycheck-mode-hook . flycheck-clang-tidy-setup))
-
 ;; Config to make it lsp-diagnose compliant
 (use-package lsp-mode
   :ensure t

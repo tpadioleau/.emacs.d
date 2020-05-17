@@ -48,6 +48,16 @@
   :hook
   (c++-mode-hook . modern-c++-font-lock-mode))
 
+(use-package flycheck-clang-analyzer
+  :ensure t
+  :hook
+  (flycheck-mode-hook . flycheck-clang-analyzer-setup))
+
+(use-package flycheck-clang-tidy
+  :ensure t
+  :hook
+  (flycheck-mode-hook . flycheck-clang-tidy-setup))
+
 ;; https://www.emacswiki.org/emacs/SrSpeedbar
 (use-package sr-speedbar
   :ensure t
