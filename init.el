@@ -84,7 +84,7 @@ There are two things you can do about this warning:
         custom-file (no-littering-expand-etc-file-name "custom.el")))
 
 ;; Custom packages in .emacs.d/init
-(push (expand-file-name "init" user-emacs-directory) load-path)
+(push (expand-file-name "init/" user-emacs-directory) load-path)
 (require 'init-highlight)
 (require 'init-ui)
 
