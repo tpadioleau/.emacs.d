@@ -53,7 +53,7 @@
 ;; defer helm-ref package loading to the use of helm-xref-show-xrefs
 (use-package helm-xref
   :ensure t
-  :defer t
+  :no-require t
   :custom
   (xref-show-xrefs-function 'helm-xref-show-xrefs))
 
@@ -76,7 +76,7 @@
 
 (use-package helm-lsp
   :ensure t
-  :defer t)
+  :no-require t)
 
 (provide 'init-helm)
 ;;; init-helm.el ends here

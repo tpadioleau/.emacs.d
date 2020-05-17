@@ -52,7 +52,7 @@
 ;; https://www.emacswiki.org/emacs/SrSpeedbar
 (use-package sr-speedbar
   :ensure t
-  :defer t)
+  :no-require t)
 
 (provide 'init-cc)
 ;;; init-cc.el ends here

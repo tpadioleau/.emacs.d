@@ -40,7 +40,7 @@
 ;; profiling package
 (use-package esup
   :ensure t
-  :defer t)
+  :no-require t)
 
 (provide 'init-utils)
 ;;; init-utils.el ends here

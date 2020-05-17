@@ -30,7 +30,7 @@
 
 (use-package csv-mode
   :ensure t
-  :defer t)
+  :no-require t)
 
 (provide 'init-csv)
 ;;; init-csv.el ends here

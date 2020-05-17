@@ -40,7 +40,7 @@
 
 (use-package live-py-mode
   :ensure t
-  :defer t)
+  :no-require t)
 
 (provide 'init-python)
 ;;; init-python ends here

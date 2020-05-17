@@ -30,7 +30,7 @@
 
 (use-package cmake-mode
   :ensure t
-  :defer t)
+  :no-require t)
 
 (use-package cmake-font-lock
   :ensure t

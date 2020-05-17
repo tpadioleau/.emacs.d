@@ -37,7 +37,7 @@
 
 (use-package swiper
   :ensure t
-  :defer t)
+  :no-require t)
 
 (use-package counsel
   :ensure t
@@ -56,7 +56,7 @@
 
 (use-package ivy-xref
   :ensure t
-  :defer t
+  :no-require t
   :custom
   (ref-show-xrefs-function 'ivy-xref-show-xrefs))
 
@@ -83,7 +83,7 @@ Otherwise fallback to calling `all-the-icons-icon-for-file'."
 
 (use-package lsp-ivy
   :ensure t
-  :defer t)
+  :no-require t)
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here

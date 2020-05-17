@@ -50,7 +50,7 @@
 
 (use-package academic-phrases
   :ensure t
-  :defer t)
+  :no-require t)
 
 (provide 'init-tex)
 ;;; init-tex ends here

@@ -55,7 +55,7 @@
 (use-package all-the-icons
   :ensure t
   :if (display-graphic-p)
-  :defer t)
+  :no-require t)
 
 (when (>= emacs-major-version 26)
   (use-package display-line-numbers

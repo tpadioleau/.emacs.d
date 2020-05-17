@@ -70,7 +70,7 @@
 
 (use-package format-all
   :ensure t
-  :defer t)
+  :no-require t)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
