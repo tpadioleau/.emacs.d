@@ -92,6 +92,7 @@ There are two things you can do about this warning:
 
 (require 'init-company)
 (require 'init-edit)
+(require 'init-flycheck)
 (require 'init-lsp)
 (require 'init-projectile)
 (require 'init-utils)
