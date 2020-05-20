@@ -58,7 +58,7 @@
   :hook
   (flycheck-mode-hook . flycheck-clang-tidy-setup)
   :config
-  (flycheck-add-next-checker 'lsp '(error . c/c++-clang-tidy)))
+  (flycheck-add-next-checker 'lsp '(warning . c/c++-clang-tidy)))
 
 ;; https://www.emacswiki.org/emacs/SrSpeedbar
 (use-package sr-speedbar
