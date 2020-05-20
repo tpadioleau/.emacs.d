@@ -33,5 +33,11 @@
   :hook
   (prog-mode . flycheck-mode))
 
+(use-package flymake-diagnostic-at-point
+  :ensure t
+  :disabled t
+  :hook
+  (flymake-mode-hook . flymake-diagnostic-at-point-mode))
+
 (provide 'init-flycheck)
 ;;; init-flycheck.el ends here

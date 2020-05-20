@@ -53,11 +53,6 @@
   (lsp-ui-sideline-enable nil)
   (lsp-ui-sideline-ignore-duplicate nil))
 
-(use-package flymake-diagnostic-at-point
-  :ensure t
-  :hook
-  (flymake-mode-hook . flymake-diagnostic-at-point-mode))
-
 (use-package format-all
   :ensure t
   :no-require t)
