@@ -72,9 +72,6 @@ There are two things you can do about this warning:
 (use-package bind-key
   :ensure t)
 
-(use-package diminish
-  :ensure t)
-
 ;; Avoids to spread configuration files.
 (use-package no-littering
   :ensure t
