@@ -36,6 +36,7 @@
                 python-mode-hook sh-mode-hook) . lsp-deferred)
   :custom
   (lsp-completion-enable-additional-text-edit nil)
+  (lsp-enable-on-type-formatting nil)
   (lsp-prefer-capf t)
   (read-process-output-max (* 1024 1024))
   :config
