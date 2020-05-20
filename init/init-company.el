@@ -35,7 +35,7 @@
   :bind
   (:map company-mode-map ("TAB" . company-indent-or-complete-common))
   :custom
-  (company-idle-delay 0.1)
+  (company-idle-delay 0.25)
   (company-minimum-prefix-length 2)
   (company-tooltip-align-annotations t))
 
