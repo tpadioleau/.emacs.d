@@ -28,7 +28,7 @@
 
 ;;; Code:
 
-(use-package yaml-mode
+(leaf yaml-mode
   :ensure t
   :mode
   (("\\.yml\\'" . yaml-mode)))

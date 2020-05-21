@@ -28,32 +28,31 @@
 
 ;;; Code:
 
-(use-package cc-mode
+(leaf cc-mode
   :ensure nil
   :mode
   (("\\.[hH]\\'" . c++-mode)
    ("\\.\\(cu\\|cuh\\)\\'" . c++-mode))
   :custom
-  (c-basic-offset 4)
-  (c-default-style "bsd")
-  (c-offsets-alist '((innamespace . 0)))
-  (c-tab-always-indent 'complete))
+  (c-basic-offset . 4)
+  (c-default-style . "bsd")
+  (c-offsets-alist . '((innamespace . 0)))
+  (c-tab-always-indent . 'complete))
 
-(use-package ccls
-  :ensure t
-  :no-require t)
+(leaf ccls
+  :ensure t)
 
-(use-package modern-cpp-font-lock
+(leaf modern-cpp-font-lock
   :ensure t
   :hook
   (c++-mode-hook . modern-c++-font-lock-mode))
 
-(use-package flycheck-clang-analyzer
+(leaf flycheck-clang-analyzer
   :ensure t
   :hook
   (flycheck-mode-hook . flycheck-clang-analyzer-setup))
 
-(use-package flycheck-clang-tidy
+(leaf flycheck-clang-tidy
   :ensure t
   :hook
   (flycheck-mode-hook . flycheck-clang-tidy-setup)
@@ -61,9 +60,8 @@
   (flycheck-add-next-checker 'lsp '(warning . c/c++-clang-tidy)))
 
 ;; https://www.emacswiki.org/emacs/SrSpeedbar
-(use-package sr-speedbar
-  :ensure t
-  :no-require t)
+(leaf sr-speedbar
+  :ensure t)
 
 (provide 'init-cc)
 ;;; init-cc.el ends here

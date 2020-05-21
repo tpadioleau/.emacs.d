@@ -29,12 +29,12 @@
 
 ;;; Code:
 
-(use-package all-the-icons-dired
+(leaf all-the-icons-dired
   :ensure t
   :hook
   (dired-mode-hook . all-the-icons-dired-mode))
 
-(use-package diredfl
+(leaf diredfl
   :ensure t
   :hook
   (dired-mode-hook . diredfl-mode))

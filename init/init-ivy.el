@@ -28,39 +28,37 @@
 
 ;;; Code:
 
-(use-package ivy
+(leaf ivy
   :ensure t
   :hook
   (after-init-hook . ivy-mode)
   :custom
-  (ivy-fixed-height-minibuffer t))
+  (ivy-fixed-height-minibuffer . t))
 
-(use-package swiper
-  :ensure t
-  :no-require t)
+(leaf swiper
+  :ensure t)
 
-(use-package counsel
+(leaf counsel
   :ensure t
   :hook
   (ivy-mode-hook . counsel-mode)
   :bind
-  (:map counsel-mode-map
-        ("C-s" . counsel-grep-or-swiper)
-        ("C-r" . counsel-grep-or-swiper-backward))
+  (:counsel-mode-map
+   ("C-s" . counsel-grep-or-swiper)
+   ("C-r" . counsel-grep-or-swiper-backward))
   :custom
-  (counsel-find-file-at-point t))
+  (counsel-find-file-at-point . t))
 
-(use-package flyspell-correct-ivy
+(leaf flyspell-correct-ivy
   :ensure t
   :after flyspell-correct)
 
-(use-package ivy-xref
+(leaf ivy-xref
   :ensure t
-  :no-require t
   :custom
-  (ref-show-xrefs-function 'ivy-xref-show-xrefs))
+  (ref-show-xrefs-function . 'ivy-xref-show-xrefs))
 
-(use-package all-the-icons-ivy
+(leaf all-the-icons-ivy
   :ensure t
   :hook
   (counsel-mode-hook . all-the-icons-ivy-setup)
@@ -79,11 +77,10 @@ Otherwise fallback to calling `all-the-icons-icon-for-file'."
     (advice-add 'all-the-icons-ivy-icon-for-file :override
                 'my-all-the-icons-ivy-icon-for-file))
   :custom
-  (all-the-icons-spacer " "))
+  (all-the-icons-spacer . " "))
 
-(use-package lsp-ivy
-  :ensure t
-  :no-require t)
+(leaf lsp-ivy
+  :ensure t)
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here

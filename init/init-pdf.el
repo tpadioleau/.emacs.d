@@ -28,7 +28,7 @@
 
 ;;; Code:
 
-(use-package pdf-tools
+(leaf pdf-tools
   :ensure t
   :if (display-graphic-p)
   :mode

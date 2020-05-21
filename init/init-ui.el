@@ -45,38 +45,38 @@
 (setq initial-major-mode 'fundamental-mode
       initial-scratch-message nil)
 
-(use-package simple
+(leaf simple
   :ensure nil
   :hook
   ((after-init-hook . column-number-mode)
    (after-init-hook . line-number-mode)
    (after-init-hook . size-indication-mode)))
 
-(use-package all-the-icons
+(leaf all-the-icons
   :ensure t
-  :if (display-graphic-p)
-  :no-require t)
+  :if (display-graphic-p))
 
 (when (>= emacs-major-version 26)
-  (use-package display-line-numbers
+  (leaf display-line-numbers
     :ensure nil
     :hook
     ((prog-mode-hook text-mode-hook) . display-line-numbers-mode)
     :custom
-    (display-line-numbers-width-start t)))
+    (display-line-numbers-width-start . t)))
 
-(use-package doom-modeline
+(leaf doom-modeline
   :ensure t
   :hook
   (after-init-hook . doom-modeline-mode)
   :custom
-  (doom-modeline-icon t))
+  (doom-modeline-icon . t))
 
-(use-package doom-themes
+(leaf doom-themes
   :ensure t
+  :require t
   :custom
-  (doom-themes-enable-bold t)   ; if nil, bold is universally disabled
-  (doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (doom-themes-enable-bold . t)   ; if nil, bold is universally disabled
+  (doom-themes-enable-italic . t) ; if nil, italics is universally disabled
   :config
   (load-theme 'doom-vibrant t)
   (doom-themes-visual-bell-config))

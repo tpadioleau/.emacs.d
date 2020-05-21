@@ -28,11 +28,10 @@
 
 ;;; Code:
 
-(use-package cmake-mode
-  :ensure t
-  :no-require t)
+(leaf cmake-mode
+  :ensure t)
 
-(use-package cmake-font-lock
+(leaf cmake-font-lock
   :ensure t
   :init
   (progn

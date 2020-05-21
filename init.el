@@ -30,54 +30,42 @@
 
 (setq gc-cons-threshold (* 16 1024 1024))
 
-;; This enables package
-(require 'package)
-
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (proto (if no-ssl "http" "https")))
-  (when no-ssl
-    (warn "\
-Your version of Emacs does not support SSL connections,
-which is unsafe because it allows man-in-the-middle attacks.
-There are two things you can do about this warning:
-1. Install an Emacs version that does support SSL and be safe.
-2. Remove this warning from your init file so you won't see it again."))
-  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  (when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
-
-(when (< emacs-major-version 27)
-  (package-initialize))
-
 ;; Installs the package "use-package" if not installed
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+(eval-and-compile
+  (customize-set-variable
+   'package-archives '(("org" . "https://orgmode.org/elpa/")
+                       ("melpa" . "https://melpa.org/packages/")
+                       ("gnu" . "https://elpa.gnu.org/packages/")))
+  (package-initialize)
+  (unless (package-installed-p 'leaf)
+    (package-refresh-contents)
+    (package-install 'leaf))
 
-;; Enables the package "use-package".
-(eval-when-compile
-  (require 'use-package)
-  (setq use-package-hook-name-suffix nil))
+  (leaf feather
+    :ensure t)
 
-(use-package benchmark-init
-  :ensure t)
+  (leaf leaf-keywords
+    :ensure t
+    :config
+    ;; initialize leaf-keywords.el
+    (leaf-keywords-init)))
 
-(use-package gcmh
+(leaf benchmark-init
+  :ensure t
+  :require t)
+
+(leaf gcmh
   :ensure t
   :hook
   (after-init-hook . gcmh-mode))
 
-(use-package bind-key
-  :ensure t)
-
 ;; Avoids to spread configuration files.
-(use-package no-littering
+(leaf no-littering
   :ensure t
+  :require t
   :config
   (setq auto-save-file-name-transforms `((".*" ,(no-littering-expand-var-file-name "auto-save/") t))
-        custom-file (no-littering-expand-etc-file-name "custom.el")))
+	custom-file (no-littering-expand-etc-file-name "custom.el")))
 
 ;; Custom packages in .emacs.d/init
 (push (expand-file-name "init/" user-emacs-directory) load-path)

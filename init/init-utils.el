@@ -29,18 +29,17 @@
 
 ;;; Code:
 
-(use-package which-key
+(leaf which-key
   :ensure t
   :hook
   ((prog-mode-hook text-mode-hook) . which-key-mode)
   :custom
-  (which-key-idle-delay 2.0)
-  (which-key-popup-type 'side-window))
+  (which-key-idle-delay . 2.0)
+  (which-key-popup-type . 'side-window))
 
 ;; profiling package
-(use-package esup
-  :ensure t
-  :no-require t)
+(leaf esup
+  :ensure t)
 
 (provide 'init-utils)
 ;;; init-utils.el ends here

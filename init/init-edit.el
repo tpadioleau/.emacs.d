@@ -42,34 +42,35 @@
 (setenv "LC_CTYPE" "UTF-8")
 (require 'iso-transl) ; to use accents
 
-(use-package clean-aindent-mode
+(leaf clean-aindent-mode
   :ensure t
   :hook
   (after-init-hook . clean-aindent-mode)
   :custom
-  (clean-aindent-is-simple-indent t)
+  (clean-aindent-is-simple-indent . t)
   :config
   (electric-indent-mode -1))
 
-(use-package flyspell
+(leaf flyspell
   :ensure nil
   :hook
   ((text-mode-hook . flyspell-mode)
    (prog-mode-hook . flyspell-prog-mode)))
 
-(use-package flyspell-correct
+(leaf flyspell-correct
   :ensure t
   :after flyspell
   :bind
-  (:map flyspell-mode-map ("C-;" . flyspell-correct-wrapper)))
+  (:flyspell-mode-map
+   ("C-;" . flyspell-correct-wrapper)))
 
-(use-package hungry-delete
+(leaf hungry-delete
   :ensure t
   :bind
   (("C-c DEL" . hungry-delete-backward)
    ("C-c C-d" . hungry-delete-forward)))
 
-(use-package mwim
+(leaf mwim
   :ensure t
   :bind
   (("C-a" . mwim-beginning-of-code-or-line)
@@ -78,32 +79,33 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "<f5>") 'revert-buffer)
 
-(use-package saveplace
+(leaf saveplace
   :ensure nil
   :hook
   (after-init-hook . save-place-mode))
 
-(use-package smartparens
+(leaf smartparens
   :ensure t
   :hook
   ((prog-mode-hook text-mode-hook) . smartparens-mode)
   :config
-  (use-package smartparens-config))
+  (leaf smartparens-config
+    :require t))
 
-(use-package undo-tree
+(leaf undo-tree
   :ensure t
   :hook
   (after-init-hook . global-undo-tree-mode))
 
-(use-package uniquify
+(leaf uniquify
   :ensure nil)
 
-(use-package windmove
+(leaf windmove
   :ensure nil
   :hook
   (after-init-hook . windmove-default-keybindings))
 
-(use-package zygospore
+(leaf zygospore
   :ensure t
   :bind
   ("C-x 1" . zygospore-toggle-delete-other-windows))

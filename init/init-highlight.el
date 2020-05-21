@@ -29,37 +29,37 @@
 
 ;;; Code:
 
-(use-package highlight-doxygen
+(leaf highlight-doxygen
   :ensure t
   :hook
   (c-mode-common-hook . highlight-doxygen-mode))
 
-(use-package hl-line
+(leaf hl-line
   :ensure nil
   :hook
   (after-init-hook . global-hl-line-mode))
 
-(use-package paren
+(leaf paren
   :ensure nil
   :hook
   (after-init-hook . show-paren-mode)
   :custom
-  (show-paren-when-point-in-periphery t)
-  (show-paren-when-point-inside-paren t)
+  (show-paren-when-point-in-periphery . t)
+  (show-paren-when-point-inside-paren . t)
   :custom-face
-  (show-paren-match ((t (:background unspecified)))))
+  (show-paren-match . '((t (:background unspecified)))))
 
-(use-package rainbow-mode
+(leaf rainbow-mode
   :ensure t
   :hook
   ((emacs-lisp-mode-hook web-mode-hook css-mode-hook) . rainbow-mode))
 
-(use-package rainbow-delimiters
+(leaf rainbow-delimiters
   :ensure t
   :hook
   (prog-mode-hook . rainbow-delimiters-mode))
 
-(use-package whitespace
+(leaf whitespace
   :ensure nil
   :init
   (define-minor-mode whitespace-trailing-mode

@@ -28,7 +28,7 @@
 
 ;;; Code:
 
-(use-package flycheck-package
+(leaf flycheck-package
   :ensure t
   :hook
   (emacs-lisp-mode-hook . flycheck-package-setup))

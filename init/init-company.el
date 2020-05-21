@@ -28,25 +28,26 @@
 
 ;;; Code:
 
-(use-package company
+(leaf company
   :ensure t
   :hook
   ((prog-mode-hook TeX-mode-hook) . company-mode)
   :bind
-  (:map company-mode-map ("TAB" . company-indent-or-complete-common))
+  (:company-mode-map
+   ("TAB" . company-indent-or-complete-common))
   :custom
-  (company-idle-delay 0.25)
-  (company-minimum-prefix-length 2)
-  (company-tooltip-align-annotations t))
+  (company-idle-delay . 0.25)
+  (company-minimum-prefix-length . 2)
+  (company-tooltip-align-annotations . t))
 
 (when (>= emacs-major-version 26)
-  (use-package company-box
+  (leaf company-box
     :ensure t
     :if (display-graphic-p)
     :hook
     (company-mode-hook . company-box-mode)
     :custom
-    (company-box-icons-alist 'company-box-icons-all-the-icons)))
+    (company-box-icons-alist . 'company-box-icons-all-the-icons)))
 
 (provide 'init-company)
 ;;; init-company.el ends here

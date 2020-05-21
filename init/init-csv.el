@@ -28,9 +28,8 @@
 
 ;;; Code:
 
-(use-package csv-mode
-  :ensure t
-  :no-require t)
+(leaf csv-mode
+  :ensure t)
 
 (provide 'init-csv)
 ;;; init-csv.el ends here

@@ -33,7 +33,7 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
-(use-package helm
+(leaf helm
   :ensure t
   :bind
   (("M-x" . helm-M-x)
@@ -41,42 +41,41 @@
    ("C-x C-f" . helm-find-files)
    ("C-h C-b" . helm-apropos)))
 
-(use-package helm-config
+(leaf helm-config
   :ensure helm
   :after helm)
 
-(use-package flyspell-correct-helm
+(leaf flyspell-correct-helm
   :ensure t
   :after flyspell-correct)
 
 ;; Wait until xref is loaded to modify xref-show-xrefs-function and
 ;; defer helm-ref package loading to the use of helm-xref-show-xrefs
-(use-package helm-xref
+(leaf helm-xref
   :ensure t
-  :no-require t
   :custom
   (xref-show-xrefs-function 'helm-xref-show-xrefs))
 
-(use-package helm-descbinds
+(leaf helm-descbinds
   :ensure t
   :hook
   (after-init-hook . helm-descbinds-mode))
 
-(use-package helm-swoop
+(leaf helm-swoop
   :ensure t
   :bind
   ("C-s" . helm-swoop))
 
 ;; Wait until a mode needs company to define key-binding
-(use-package helm-company
+(leaf helm-company
   :ensure t
   :after company
   :bind
-  (:map company-mode-map ("C-<tab>" . helm-company)))
+  (:company-mode-map
+   ("C-<tab>" . helm-company)))
 
-(use-package helm-lsp
-  :ensure t
-  :no-require t)
+(leaf helm-lsp
+  :ensure t)
 
 (provide 'init-helm)
 ;;; init-helm.el ends here

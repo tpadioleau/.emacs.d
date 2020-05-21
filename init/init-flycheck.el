@@ -28,12 +28,12 @@
 
 ;;; Code:
 
-(use-package flycheck
+(leaf flycheck
   :ensure t
   :hook
   (prog-mode . flycheck-mode))
 
-(use-package flymake-diagnostic-at-point
+(leaf flymake-diagnostic-at-point
   :ensure t
   :disabled t
   :hook

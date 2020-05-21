@@ -28,12 +28,12 @@
 
 ;;; Code:
 
-(use-package projectile
+(leaf projectile
   :ensure t
   :hook
   ((prog-mode text-mode) . projectile-mode)
-  :config
-  (setq projectile-enable-caching t))
+  :custom
+  (projectile-enable-caching . t))
 
 (provide 'init-projectile)
 ;;; init-projectile.el ends here

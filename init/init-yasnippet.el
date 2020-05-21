@@ -29,16 +29,16 @@
 
 ;;; Code:
 
-(use-package yasnippet
+(leaf yasnippet
   :ensure t
   :hook
   ((prog-mode-hook TeX-mode-hook) . yas-minor-mode))
 
-(use-package yasnippet-snippets
+(leaf yasnippet-snippets
   :ensure t
   :after yasnippet
   :custom
-  (yas-snippet-dirs `(,(expand-file-name "snippets/" user-emacs-directory)))
+  (yas-snippet-dirs . `(,(expand-file-name "snippets/" user-emacs-directory)))
   :config
   (yas-reload-all))
 

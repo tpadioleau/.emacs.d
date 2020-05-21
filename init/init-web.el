@@ -28,17 +28,17 @@
 
 ;;; Code:
 
-(use-package web-mode
+(leaf web-mode
   :ensure t
   :mode
   (("\\.html?\\'" . web-mode)
    ("\\.js?\\'" . web-mode)
    ("\\.php\\'" . web-mode)))
 
-(use-package company-web
+(leaf company-web
   :ensure t
-  :disabled
-  :config
+  :disabled t
+  :defer-config
   (add-to-list 'company-backends 'company-web-html))
 
 (provide 'init-web)

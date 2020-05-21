@@ -32,17 +32,17 @@
 
 ;;; Code:
 
-(use-package ibuffer
+(leaf ibuffer
   :ensure nil
   :bind
   ("C-x C-b" . ibuffer))
 
-(use-package all-the-icons-ibuffer
+(leaf all-the-icons-ibuffer
   :ensure t
   :hook
   (ibuffer-mode-hook . all-the-icons-ibuffer-mode))
 
-(use-package ibuffer-projectile
+(leaf ibuffer-projectile
   :ensure t
   :init
   (defun apply-ibuffer-projectile ()

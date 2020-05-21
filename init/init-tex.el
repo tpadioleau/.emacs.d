@@ -28,29 +28,27 @@
 
 ;;; Code:
 
-(use-package tex
+(leaf tex
   :ensure auctex
-  :defer t
   :custom
-  (TeX-auto-save t)
-  (TeX-parse-self t)
-  (TeX-view-program-selection '((output-pdf "PDF Tools")))
-  (TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view)))
-  (TeX-source-correlate-mode t)
-  :config
+  (TeX-auto-save . t)
+  (TeX-parse-self . t)
+  (TeX-view-program-selection . '((output-pdf "PDF Tools")))
+  (TeX-view-program-list . '(("PDF Tools" TeX-pdf-tools-sync-view)))
+  (TeX-source-correlate-mode . t)
+  :defer-config
   (add-hook 'TeX-after-compilation-finished-functions 'TeX-revert-document-buffer))
 
-(use-package reftex
+(leaf reftex
   :ensure nil
   :hook
   (TeX-mode-hook . reftex-mode)
   :custom
-  (reftex-cite-prompt-optional-args t)
-  (reftex-plug-into-AUCTeX t))
+  (reftex-cite-prompt-optional-args . t)
+  (reftex-plug-into-AUCTeX . t))
 
-(use-package academic-phrases
-  :ensure t
-  :no-require t)
+(leaf academic-phrases
+  :ensure t)
 
 (provide 'init-tex)
 ;;; init-tex ends here

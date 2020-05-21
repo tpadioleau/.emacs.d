@@ -29,34 +29,33 @@
 ;;; Code:
 
 ;; Config to make it lsp-diagnose compliant
-(use-package lsp-mode
+(leaf lsp-mode
   :ensure t
   :hook
   ((c-mode-hook c++-mode-hook objc-mode-hook TeX-mode-hook
                 python-mode-hook sh-mode-hook) . lsp-deferred)
   :custom
-  (lsp-completion-enable-additional-text-edit nil)
-  (lsp-enable-on-type-formatting nil)
-  (lsp-prefer-capf t)
-  (read-process-output-max (* 1024 1024))
+  (lsp-completion-enable-additional-text-edit . nil)
+  (lsp-enable-on-type-formatting . nil)
+  (lsp-prefer-capf . t)
+  (read-process-output-max . `,(* 1024 1024))
   :config
   (remove-hook 'company-backends 'company-clang))
 
-(use-package lsp-ui
+(leaf lsp-ui
   :ensure t
   :hook
   (lsp-mode-hook . lsp-ui-mode)
   :custom
-  (lsp-ui-doc-enable t)
-  (lsp-ui-doc-position 'top)
-  (lsp-ui-doc-alignment 'window)
-  (lsp-ui-imenu-enable t)
-  (lsp-ui-sideline-enable nil)
-  (lsp-ui-sideline-ignore-duplicate nil))
+  (lsp-ui-doc-enable . t)
+  (lsp-ui-doc-position . 'top)
+  (lsp-ui-doc-alignment . 'window)
+  (lsp-ui-imenu-enable . t)
+  (lsp-ui-sideline-enable . nil)
+  (lsp-ui-sideline-ignore-duplicate . nil))
 
-(use-package format-all
-  :ensure t
-  :no-require t)
+(leaf format-all
+  :ensure t)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

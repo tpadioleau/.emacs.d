@@ -28,7 +28,7 @@
 
 ;;; Code:
 
-(use-package markdown-mode
+(leaf markdown-mode
   :ensure t
   :mode
   (("README\\.md\\'" . gfm-mode)

@@ -28,19 +28,17 @@
 
 ;;; Code:
 
-(use-package python
+(leaf python
   :ensure nil
-  :defer t
   :custom
-  (python-shell-completion-native-enable nil)
-  :config
+  (python-shell-completion-native-enable . nil)
+  :defer-config
   (when (and (executable-find "python3")
              (equal python-shell-interpreter "python"))
     (setq python-shell-interpreter "python3")))
 
-(use-package live-py-mode
-  :ensure t
-  :no-require t)
+(leaf live-py-mode
+  :ensure t)
 
 (provide 'init-python)
 ;;; init-python ends here
