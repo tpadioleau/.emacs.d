@@ -31,7 +31,7 @@
 (leaf projectile
   :ensure t
   :hook
-  ((prog-mode text-mode) . projectile-mode)
+  ((prog-mode-hook text-mode-hook) . projectile-mode)
   :custom
   (projectile-enable-caching . t))
 

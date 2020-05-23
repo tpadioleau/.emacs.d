@@ -31,7 +31,7 @@
 (leaf flycheck
   :ensure t
   :hook
-  (prog-mode . flycheck-mode))
+  (prog-mode-hook . flycheck-mode))
 
 (leaf flymake-diagnostic-at-point
   :ensure t
