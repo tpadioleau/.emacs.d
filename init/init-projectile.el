@@ -32,8 +32,8 @@
   :ensure t
   :hook
   ((prog-mode-hook text-mode-hook) . projectile-mode)
-  :config
-  (setq projectile-enable-caching t))
+  :custom
+  (projectile-enable-caching t))
 
 (provide 'init-projectile)
 ;;; init-projectile.el ends here
