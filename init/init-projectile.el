@@ -31,7 +31,7 @@
 (use-package projectile
   :ensure t
   :hook
-  ((prog-mode text-mode) . projectile-mode)
+  ((prog-mode-hook text-mode-hook) . projectile-mode)
   :config
   (setq projectile-enable-caching t))
 

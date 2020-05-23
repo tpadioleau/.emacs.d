@@ -31,7 +31,7 @@
 (use-package flycheck
   :ensure t
   :hook
-  (prog-mode . flycheck-mode))
+  (prog-mode-hook . flycheck-mode))
 
 (use-package flymake-diagnostic-at-point
   :ensure t

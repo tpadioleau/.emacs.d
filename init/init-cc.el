@@ -55,6 +55,7 @@
 
 (use-package flycheck-clang-tidy
   :ensure t
+  :after lsp-mode
   :hook
   (flycheck-mode-hook . flycheck-clang-tidy-setup)
   :config
