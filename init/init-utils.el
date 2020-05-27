@@ -34,7 +34,6 @@
   :hook
   ((prog-mode-hook text-mode-hook) . which-key-mode)
   :custom
-  (which-key-idle-delay . 2.0)
   (which-key-popup-type . 'side-window))
 
 ;; profiling package
