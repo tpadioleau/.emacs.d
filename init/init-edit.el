@@ -86,7 +86,7 @@
 (use-package smartparens
   :ensure t
   :hook
-  ((prog-mode-hook text-mode-hook) . smartparens-mode)
+  (prog-mode-hook . smartparens-mode)
   :config
   (use-package smartparens-config))
 
