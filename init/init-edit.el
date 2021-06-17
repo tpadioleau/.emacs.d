@@ -55,7 +55,8 @@
   :ensure nil
   :hook
   ((text-mode-hook . flyspell-mode)
-   (prog-mode-hook . flyspell-prog-mode)))
+   ;; (prog-mode-hook . flyspell-prog-mode)
+   ))
 
 (use-package flyspell-correct
   :ensure t

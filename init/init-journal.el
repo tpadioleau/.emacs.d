@@ -28,43 +28,15 @@
 
 ;;; Code:
 
-(use-package cc-mode
-  :ensure nil
-  :mode
-  (("\\.[hH]\\'" . c++-mode)
-   ("\\.\\(cu\\|cuh\\)\\'" . c++-mode))
-  :custom
-  (c-basic-offset 4)
-  (c-default-style "bsd")
-  (c-offsets-alist '((innamespace . 0)))
-  (c-tab-always-indent 'complete))
-
-;; (use-package ccls
-;;   :ensure t
-;;   :no-require t)
-
-(use-package modern-cpp-font-lock
+(use-package org-journal
   :ensure t
-  :hook
-  (c++-mode-hook . modern-c++-font-lock-mode))
+  :defer t
+  :init
+  (setq org-journal-prefix-key "C-c j ")
+  :config
+  (setq org-journal-dir "~/Documents/org/journal/"
+        org-journal-date-format "%A, %d %B %Y"
+        org-journal-file-type 'yearly))
 
-;; (use-package flycheck-clang-analyzer
-;;   :ensure t
-;;   :hook
-;;   (flycheck-mode-hook . flycheck-clang-analyzer-setup))
-
-;; (use-package flycheck-clang-tidy
-;;   :ensure t
-;;   :after lsp-mode
-;;   :hook
-;;   (flycheck-mode-hook . flycheck-clang-tidy-setup)
-;;   :config
-;;   (flycheck-add-next-checker 'lsp '(warning . c/c++-clang-tidy)))
-
-;; https://www.emacswiki.org/emacs/SrSpeedbar
-(use-package sr-speedbar
-  :ensure t
-  :no-require t)
-
-(provide 'init-cc)
-;;; init-cc.el ends here
+(provide 'init-journal)
+;;; init-journal.el ends here

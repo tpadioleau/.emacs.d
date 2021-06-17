@@ -102,6 +102,7 @@ There are two things you can do about this warning:
 (require 'init-dired)
 (require 'init-emacs-lisp)
 (require 'init-ibuffer)
+(require 'init-journal)
 (require 'init-md)
 (require 'init-pdf)
 (require 'init-python)

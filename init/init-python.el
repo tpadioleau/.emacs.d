@@ -38,9 +38,9 @@
              (equal python-shell-interpreter "python"))
     (setq python-shell-interpreter "python3")))
 
-(use-package live-py-mode
-  :ensure t
-  :no-require t)
+;; (use-package live-py-mode
+;;   :ensure t
+;;   :no-require t)
 
 (provide 'init-python)
 ;;; init-python ends here
